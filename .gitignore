@@ -1,0 +1,10 @@
+# Large originals not needed in repo
+hero.mp4
+hero-web-original.mp4
+
+# Mac system files
+.DS_Store
+
+# Local dev config
+.claude/
+.vercel/
