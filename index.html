@@ -20,6 +20,7 @@
   <!-- Preload critical resources -->
   <link rel="preload" as="image" href="hero-poster.jpg" />
   <link rel="preload" as="font" href="fonts/29LT%20Azer%20Regular.otf" type="font/otf" crossorigin />
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdkroMtAAAAAENC9dThj2eMj5SAXnEUbfT2UJo-" async defer></script>
   <!-- Prevent language FOUC: apply saved preference before first CSS paint -->
   <script>
     (function(){var l=localStorage.getItem('resal-lang');if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');}})();
@@ -1412,29 +1413,34 @@
     btn.disabled = true;
     btn.innerHTML = isAr ? 'جاري الإرسال...' : 'Sending...';
 
-    const url = SCRIPT_URL + '?' + new URLSearchParams(data).toString();
-
-    // no-cors fetch — response is opaque so we can't confirm delivery, but the request fires
-    fetch(url, { method: 'GET', mode: 'no-cors' })
-      .then(() => {
-        btn.innerHTML = isAr ? 'تم الإرسال ✓ — سنتواصل معك قريباً' : 'Sent ✓ — We\'ll be in touch soon';
-        btn.style.background = '#2d5a3d';
-        form.reset();
-        setTimeout(() => {
-          btn.innerHTML = isAr ? '← إرسال الرسالة' : 'Send Message →';
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
-      })
-      .catch(() => {
-        btn.innerHTML = isAr ? 'فشل الإرسال — يرجى المحاولة مجدداً' : 'Failed to send — please try again';
-        btn.style.background = '#c0392b';
-        btn.disabled = false;
-        setTimeout(() => {
-          btn.innerHTML = isAr ? '← إرسال الرسالة' : 'Send Message →';
-          btn.style.background = '';
-        }, 3500);
-      });
+    // Get reCAPTCHA v3 token then submit
+    grecaptcha.ready(() => {
+      grecaptcha.execute('6LdkroMtAAAAAENC9dThj2eMj5SAXnEUbfT2UJo-', { action: 'contact_form' })
+        .then(token => {
+          data.recaptchaToken = token;
+          const url = SCRIPT_URL + '?' + new URLSearchParams(data).toString();
+          fetch(url, { method: 'GET', mode: 'no-cors' })
+            .then(() => {
+              btn.innerHTML = isAr ? 'تم الإرسال ✓ — سنتواصل معك قريباً' : 'Sent ✓ — We\'ll be in touch soon';
+              btn.style.background = '#2d5a3d';
+              form.reset();
+              setTimeout(() => {
+                btn.innerHTML = isAr ? '← إرسال الرسالة' : 'Send Message →';
+                btn.style.background = '';
+                btn.disabled = false;
+              }, 4000);
+            })
+            .catch(() => {
+              btn.innerHTML = isAr ? 'فشل الإرسال — يرجى المحاولة مجدداً' : 'Failed to send — please try again';
+              btn.style.background = '#c0392b';
+              btn.disabled = false;
+              setTimeout(() => {
+                btn.innerHTML = isAr ? '← إرسال الرسالة' : 'Send Message →';
+                btn.style.background = '';
+              }, 3500);
+            });
+        });
+    });
   }
 </script>
 </body>
