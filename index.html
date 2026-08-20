@@ -4,27 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>رسال للتطوير العقاري | Resal Real Estate</title>
-  <meta name="description" content="رسال للتطوير العقاري — مطور عقاري رائد في المدينة المنورة يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة. Resal Real Estate — a strategic development alliance in AlMadinah AlMunawwarah, Saudi Arabia." />
+  <meta name="description" content="رسال للتطوير العقاري مطور عقاري المدينة المنورة كتحالف استراتيجي يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة. Resal Real Estate a strategic development alliance in AlMadinah AlMunawwarah, Saudi Arabia." />
+  
+  <!-- Canonical and Hreflang Tags -->
   <link rel="canonical" href="https://www.resalre.com/" />
+  <link rel="alternate" hreflang="ar" href="https://www.resalre.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.resalre.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.resalre.com/" />
+
+  <!-- Robots & Indexing Control -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Geo Meta Tags for Local SEO -->
+  <meta name="geo.region" content="SA-03" />
+  <meta name="geo.placename" content="AlMadinah AlMunawwarah" />
+  <meta name="geo.position" content="24.4672;39.6111" />
+  <meta name="ICBM" content="24.4672, 39.6111" />
+
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="رسال للتطوير العقاري | Resal Real Estate" />
-  <meta property="og:description" content="تحالف استراتيجي للتطوير العقاري في المدينة المنورة — يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة. A strategic real estate development alliance in AlMadinah AlMunawwarah." />
+  <meta property="og:description" content="تحالف استراتيجي للتطوير العقاري في المدينة المنورة يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة. A strategic real estate development alliance in AlMadinah AlMunawwarah." />
   <meta property="og:url" content="https://www.resalre.com/" />
   <meta property="og:image" content="https://www.resalre.com/hero-poster.jpg" />
   <meta property="og:locale" content="ar_SA" />
   <meta property="og:locale:alternate" content="en_US" />
+  
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="رسال للتطوير العقاري | Resal Real Estate" />
-  <meta name="twitter:description" content="تحالف استراتيجي للتطوير العقاري في المدينة المنورة — يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة." />
+  <meta name="twitter:description" content="تحالف استراتيجي للتطوير العقاري في المدينة المنورة يجمع الأرض والهندسة ورأس المال تحت رؤية واحدة." />
   <meta name="twitter:image" content="https://www.resalre.com/hero-poster.jpg" />
+
   <!-- Preload critical resources -->
   <link rel="preload" as="image" href="hero-poster.jpg" />
   <link rel="preload" as="font" href="fonts/29LT%20Azer%20Regular.otf" type="font/otf" crossorigin />
   <script src="https://www.google.com/recaptcha/api.js?render=6LdkroMtAAAAAENC9dThj2eMj5SAXnEUbfT2UJo-" async defer></script>
-  <!-- Prevent language FOUC: apply saved preference before first CSS paint -->
+  
+  <!-- Prevent language FOUC: Arabic default unless English specifically saved -->
   <script>
-    (function(){var l=localStorage.getItem('resal-lang');if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');}})();
+    (function(){
+      var l = localStorage.getItem('resal-lang');
+      if (l === 'en') {
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+      } else {
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    })();
   </script>
+  
   <style>
     @font-face { font-family: '29LT Azer'; src: url('fonts/29LT Azer Thin.otf') format('opentype'); font-weight: 100; font-style: normal; font-display: swap; }
     @font-face { font-family: '29LT Azer'; src: url('fonts/29LT Azer ExtraLight.otf') format('opentype'); font-weight: 200; font-style: normal; font-display: swap; }
@@ -443,12 +474,13 @@
   {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
+    "inLanguage": "ar",
     "name": "رسال للتطوير العقاري",
     "alternateName": "Resal Real Estate",
     "url": "https://www.resalre.com",
     "logo": "https://www.resalre.com/logo-ar-dark.png",
     "image": "https://www.resalre.com/hero-poster.jpg",
-    "description": "مطور عقاري رائد في المدينة المنورة يجمع الأرض والهندسة ورأس المال تحت رؤية استثمارية واحدة.",
+    "description": "مطور عقاري المدينة المنورة كتحالف استراتيجي يجمع الأرض والهندسة ورأس المال تحت رؤية استثمارية واحدة.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "المدينة المنورة",
@@ -544,8 +576,8 @@
       <h1 class="hero-title t-ar-block">رسال للتطوير العقاري <em>في المدينة المنورة</em></h1>
 
       <p class="hero-desc">
-        <span class="t-en">Resal is a strategic real estate development alliance in AlMadinah AlMunawwarah — uniting land acquisition, engineering, and financial management under one integrated vision to shape communities built for life.</span>
-        <span class="t-ar">بصفتها <strong>مطور عقاري رائد في المدينة المنورة</strong>، تأتي «رسال» كثمرة تحالف استراتيجي يجمع بين تطوير الأراضي والهندسة والإدارة المالية تحت رؤية متكاملة لبناء مجتمعات تُصنع للحياة والاستثمار المستدام.</span>
+        <span class="t-en">Resal is a strategic real estate development alliance in AlMadinah AlMunawwarah uniting land acquisition, engineering, and financial management under one integrated vision to shape communities built for life.</span>
+        <span class="t-ar">رسال هي وليدة تحالف استراتيجي بصفتها <strong>مطور عقاري المدينة المنورة</strong>، يجمع بين تطوير الأراضي والهندسة والإدارة المالية تحت رؤية متكاملة واحدة لبناء مجتمعات تُصنع للحياة.</span>
       </p>
 
       <div class="hero-actions">
@@ -583,7 +615,7 @@
         </div>
       </div>
 
-      <!-- Convergence — three became one -->
+      <!-- Convergence three became one -->
       <div class="alliance-convergence">
         <div class="ac-line"></div>
         <div class="ac-badge">
@@ -593,7 +625,7 @@
         <div class="ac-line right"></div>
       </div>
 
-      <!-- Resal — the resulting entity -->
+      <!-- Resal the resulting entity -->
       <div class="alliance-result reveal">
         <div class="ar-logo-wrap">
           <img src="logo-en-dark.png" class="ar-resal-logo logo-img-en" alt="Resal Real Estate Development Logo" />
@@ -614,23 +646,23 @@
         <div class="rule reveal" aria-hidden="true"></div>
         <h2 class="serif reveal">
           <span class="t-en">An integrated <em>ecosystem</em><br />for real estate in AlMadinah AlMunawwarah</span>
-          <span class="t-ar">منظومة رائدة بين <em>شركات التطوير العقاري</em><br />في المدينة المنورة</span>
+          <span class="t-ar">منظومة متكاملة بين <em>شركات التطوير العقاري في المدينة المنورة</em></span>
         </h2>
         <p class="reveal">
-          <span class="t-en">At the heart of Saudi Arabia's accelerating urban renaissance, Resal emerges as a unique strategic alliance between Mothallath, Reem Taybah, and Asasiat Alemaar — an alliance that fundamentally redefines real estate development. We are not merely a development company — we are a fully integrated ecosystem that brings together the power and expertise of three major entities: land acquisition, construction and engineering, and financial management.</span>
-          <span class="t-ar">في قلب النهضة الحضرية المتسارعة بالمملكة العربية السعودية، تبرز «رسال» في صدارة <strong>شركات التطوير العقاري في المدينة المنورة</strong> كتحالف استراتيجي فريد بين «مثلث» و«ريم طيبة» و«أساسيات الإعمار». نحن منظومة متكاملة تقدم حلولاً شاملة تشمل الاستحواذ على الأراضي، التصميم الهندسي المتطور، والإدارة المالية المحكمة.</span>
+          <span class="t-en">At the heart of Saudi Arabia's accelerating urban renaissance, Resal emerges as a unique strategic alliance between Mothallath, Reem Taybah, and Asasiat Alemaar, an alliance that fundamentally redefines real estate development. We are not merely a development company, we are a fully integrated ecosystem that brings together the power and expertise of three major entities: land acquisition, construction and engineering, and financial management.</span>
+          <span class="t-ar">في قلب النهضة الحضرية المتسارعة في المملكة العربية السعودية، تبرز «رسال» في صدارة <strong>شركات التطوير العقاري في المدينة المنورة</strong> باعتبارها تحالفاً استراتيجياً فريداً بين «مثلث» و«ريم طيبة» و«أساسيات» كتحالف يُعيد تعريف التطوير العقاري من جذوره. نحن لسنا مجرد شركة تطوير عقاري، نحن نظام بيئي متكامل يجمع بين قوة وخبرة ثلاث كيانات رئيسية: الاستحواذ على الأراضي، والبناء والهندسة، والإدارة المالية.</span>
         </p>
         <p class="reveal">
           <span class="t-en">In Resal, we believe that true excellence is not measured by appearance alone, but by the depth of commitment and reliability behind every project we deliver.</span>
-          <span class="t-ar">نعمل على ترسيخ مكانتنا كـ <strong>أفضل شركة عقارية بالمدينة المنورة</strong> من خلال الالتزام بأعلى معايير التنفيذ، الشفافية المطلقة، وتقديم مشاريع استثنائية تفوق تطلعات الساكن والمستثمر.</span>
+          <span class="t-ar">في «رسال»، نسعى لترسيخ مكانتنا كـ <strong>أفضل شركة عقارية بالمدينة المنورة</strong> حيث نؤمن بأن التميز الحقيقي لا يقاس بالمظهر وحده، بل بعمق الالتزام والموثوقية وراء كل مشروع نُنجزه.</span>
         </p>
 
         <div class="vm-grid reveal">
           <div class="vm-card">
             <div class="vm-label"><span class="t-en">Vision</span><span class="t-ar">رؤيتنا</span></div>
             <div class="vm-text">
-              <span class="t-en">"To make Resal the definition of complete living in AlMadinah AlMunawwarah — a home, a life, and a place to belong, all under one name."</span>
-              <span class="t-ar">"أن نجعل رسال العنوان الذي يعني الاكتمال في المدينة المنورة — البيت والحياة والانتماء تحت اسم واحد."</span>
+              <span class="t-en">"To make Resal the definition of complete living in AlMadinah AlMunawwarah, a home, a life, and a place to belong, all under one name."</span>
+              <span class="t-ar">"أن نجعل رسال العنوان الذي يعني الاكتمال في المدينة المنورة: البيت والحياة والانتماء تحت اسم واحد."</span>
             </div>
           </div>
           <div class="vm-card">
@@ -683,8 +715,8 @@
         <div class="val-ar">الطموح</div>
         <div class="val-en-lbl">Ambition</div>
         <p class="val-desc">
-          <span class="t-en">We create communities that shape the future — developments that go beyond shelter to forge identity, belonging, and vision.</span>
-          <span class="t-ar">نبني مجتمعات تصنع المستقبل — تطويرات تتجاوز السكن لتُرسّخ الهوية والانتماء والرؤية.</span>
+          <span class="t-en">We create communities that shape the future, developments that go beyond shelter to forge identity, belonging, and vision.</span>
+          <span class="t-ar">نبني مجتمعات تصنع المستقبل، تطويرات تتجاوز السكن لتُرسّخ الهوية والانتماء والرؤية.</span>
         </p>
       </div>
       <div class="val-card reveal d1">
@@ -701,8 +733,8 @@
         <div class="val-ar">الشفافية</div>
         <div class="val-en-lbl">Transparency</div>
         <p class="val-desc">
-          <span class="t-en">Clear figures, reliable details, and honest communication at every stage — from land acquisition through to handover.</span>
-          <span class="t-ar">أرقام واضحة وتفاصيل موثوقة وتواصل صادق في كل مرحلة — من الاستحواذ على الأرض إلى التسليم.</span>
+          <span class="t-en">Clear figures, reliable details, and honest communication at every stage from land acquisition through to handover.</span>
+          <span class="t-ar">أرقام واضحة وتفاصيل موثوقة وتواصل صادق في كل مرحلة من الاستحواذ على الأرض إلى التسليم.</span>
         </p>
       </div>
       <div class="val-card reveal d2">
@@ -730,8 +762,8 @@
         <div class="val-ar">القيمة</div>
         <div class="val-en-lbl">Value</div>
         <p class="val-desc">
-          <span class="t-en">Sustainable value creation for residents, investors, and the broader AlMadinah AlMunawwarah community — now and for generations ahead.</span>
-          <span class="t-ar">خلق قيمة مستدامة للسكان والمستثمرين ومجتمع المدينة المنورة الأوسع — الآن وللأجيال القادمة.</span>
+          <span class="t-en">Sustainable value creation for residents, investors, and the broader AlMadinah AlMunawwarah community now and for generations ahead.</span>
+          <span class="t-ar">خلق قيمة مستدامة للسكان والمستثمرين ومجتمع المدينة المنورة الأوسع الآن وللأجيال القادمة.</span>
         </p>
       </div>
     </div>
@@ -748,8 +780,8 @@
       <span class="t-ar">كيف <em>نعمل</em></span>
     </h2>
     <p class="lead reveal">
-      <span class="t-en">Four operational pillars form the foundation of every project Resal delivers — a methodology built for the demands of AlMadinah AlMunawwarah's evolving real estate landscape.</span>
-      <span class="t-ar">أربع ركائز تشغيلية تُشكّل أساس كل مشروع تُنجزه رسال — منهجية مبنية لمواجهة متطلبات المشهد العقاري المتطور في المدينة المنورة.</span>
+      <span class="t-en">Four operational pillars form the foundation of every project Resal delivers, a methodology built for the demands of AlMadinah AlMunawwarah's evolving real estate landscape.</span>
+      <span class="t-ar">أربع ركائز تشغيلية تُشكّل أساس كل مشروع تُنجزه رسال عبر منهجية مبنية لمواجهة متطلبات المشهد العقاري المتطور في المدينة المنورة.</span>
     </p>
     <div class="way-grid">
       <div class="way-card reveal">
@@ -781,8 +813,8 @@
           <span class="t-ar">التطوير المتمحور حول نمط الحياة</span>
         </div>
         <p class="way-desc">
-          <span class="t-en">Our developments are planned around how people actually live — blending architecture, amenities, and community space into environments that feel like home from day one.</span>
-          <span class="t-ar">نُخطط مشاريعنا حول طريقة حياة الناس الفعلية — ندمج العمارة والمرافق والمساحات المجتمعية في بيئات تُشعر بالبيت منذ اليوم الأول.</span>
+          <span class="t-en">Our developments are planned around how people actually live, blending architecture, amenities, and community space into environments that feel like home from day one.</span>
+          <span class="t-ar">نُخطط مشاريعنا حول طريقة حياة الناس الفعلية، ندمج العمارة والمرافق والمساحات المجتمعية في بيئات تُشعر بالبيت منذ اليوم الأول.</span>
         </p>
       </div>
       <div class="way-card reveal d2">
@@ -825,8 +857,8 @@
             <span class="t-ar">التطوير وإدارة الأصول</span>
           </div>
           <p class="svc-row-desc">
-            <span class="t-en">End-to-end real estate development — from site acquisition and master planning through construction management and long-term asset optimisation, building strategic partnerships and investment opportunities at every stage.</span>
-            <span class="t-ar">تطوير عقاري شامل يضعنا في طليعة <strong>شركات عقارية المدينة المنورة</strong> المتخصصة في إدارة وتطوير الأصول، بدءاً من اختيار المواقع الحيوية والتخطيط الرئيسي وصولاً إلى التنفيذ وإدارة المشروعات.</span>
+            <span class="t-en">End-to-end real estate development from site acquisition and master planning through construction management and long-term asset optimisation, building strategic partnerships and investment opportunities at every stage.</span>
+            <span class="t-ar">تطوير عقاري شامل يضعنا في مقدمة <strong>شركات عقارية المدينة المنورة</strong>، يبدأ من الاستحواذ على الموقع والتخطيط الرئيسي وصولاً إلى إدارة البناء وتحسين الأصول وبناء شراكات استثمارية نوعية.</span>
           </p>
         </div>
         <div class="svc-row-icon">
@@ -905,7 +937,7 @@
           </div>
           <p class="svc-row-desc">
             <span class="t-en">Establishing and nurturing alliances with leading developers, financial institutions, and public entities to expand Resal's reach and unlock new growth opportunities across Saudi Arabia's real estate market.</span>
-            <span class="t-ar">نعمل كـ <strong>شركة استثمار عقاري</strong> متكاملة تبني تحالفات موثوقة مع كبرى المؤسسات المالية والمطورين لتوفير فرص استثمارية نوعية في سوق المدينة المنورة والمملكة.</span>
+            <span class="t-ar">نعمل كـ <strong>شركة استثمار عقاري</strong> متكاملة تقوم على بناء وتعزيز التحالفات مع المطورين والمؤسسات المالية والجهات العامة لتوسيع نطاق الأعمال وفتح فرص نمو استثمارية جديدة.</span>
           </p>
         </div>
         <div class="svc-row-icon">
@@ -966,8 +998,8 @@
 
       <!-- Description -->
       <p class="ip-desc">
-        <span class="t-en">Resal's first development in AlMadinah AlMunawwarah — a landmark residential project. Founder's Club members get priority access to units, pricing, and project milestones before public launch.</span>
-        <span class="t-ar">أولى مشاريعنا السكنية من <strong>أفضل شركة عقارية بالمدينة المنورة</strong> — مشروع سكني واستثماري فارق. يمنح أعضاء نادي المؤسسين أولوية الحجز والوصول للأسعار وأبرز مراحل المشروع قبل الإطلاق الرسمي.</span>
+        <span class="t-en">Resal's first development in AlMadinah AlMunawwarah, a landmark residential project. Founder's Club members get priority access to units, pricing, and project milestones before public launch.</span>
+        <span class="t-ar">أول مشاريع رسال في المدينة المنورة، مشروع سكني بارز يمنح أعضاء نادي المؤسسين أولوية الوصول للوحدات والأسعار وأبرز مراحل المشروع قبل الإطلاق الرسمي.</span>
       </p>
 
       <!-- CTA -->
@@ -1014,8 +1046,8 @@
             <span class="t-ar">مثلث وريم طيبة وأساسيات الإعمار يوقّعون اتفاقية تأسيس رسال للتطوير العقاري</span>
           </div>
           <p class="n-excerpt">
-            <span class="t-en">Three of AlMadinah AlMunawwarah's most respected entities — Mothallath, Reem Taibah, and Asasiat Alemaar — have formalised a landmark alliance to launch Resal Real Estate, an integrated development platform uniting land, engineering, and capital under one vision.</span>
-            <span class="t-ar">وقّعت ثلاث من أبرز الكيانات في المدينة المنورة — مثلث وريم طيبة وأساسيات الإعمار — اتفاقية تأسيس رسال للتطوير العقاري، منصة تطوير متكاملة تجمع الأرض والهندسة ورأس المال تحت رؤية واحدة.</span>
+            <span class="t-en">Three of AlMadinah AlMunawwarah's most respected entities, Mothallath, Reem Taibah, and Asasiat Alemaar, have formalised a landmark alliance to launch Resal Real Estate, an integrated development platform uniting land, engineering, and capital under one vision.</span>
+            <span class="t-ar">وقّعت ثلاث من أبرز الكيانات في المدينة المنورة: مثلث وريم طيبة وأساسيات الإعمار، اتفاقية تأسيس رسال للتطوير العقاري كمنصة تطوير متكاملة تجمع الأرض والهندسة ورأس المال تحت رؤية واحدة.</span>
           </p>
           <span class="n-link" style="cursor:default;opacity:.45;">
             <span class="t-en">Coming soon</span><span class="t-ar">قريباً</span>
@@ -1037,8 +1069,8 @@
               <span class="t-ar">رسال توقّع عقد الاستشارات الهندسية لمشروعها السكني الأول في المدينة المنورة</span>
             </div>
             <p class="n-excerpt">
-              <span class="t-en">Resal has selected a leading engineering consultancy to lead the design and master planning of its inaugural development — marking a defining milestone on the road to delivery.</span>
-              <span class="t-ar">اختارت رسال شركة استشارات هندسية رائدة لقيادة التصميم والتخطيط العام لمشروعها الأول — وهو إنجاز محوري في مسيرة التسليم.</span>
+              <span class="t-en">Resal has selected a leading engineering consultancy to lead the design and master planning of its inaugural development, marking a defining milestone on the road to delivery.</span>
+              <span class="t-ar">اختارت رسال شركة استشارات هندسية رائدة لقيادة التصميم والتخطيط العام لمشروعها الأول، وهو إنجاز محوري في مسيرة التسليم.</span>
             </p>
             <a href="#" class="n-link" aria-label="اقرأ تفاصيل عقد الاستشارات الهندسية">
               <span class="t-en">Read more</span><span class="t-ar">اقرأ المزيد</span>
@@ -1085,8 +1117,8 @@
           <span class="t-ar">دعنا نجد<br /><em>منزل أحلامك</em></span>
         </h2>
         <p class="reveal">
-          <span class="t-en">Whether you're an investor, a future resident, or a potential partner — we'd like to hear from you.</span>
-          <span class="t-ar">سواء كنت مستثمراً أو ساكناً مستقبلياً أو شريكاً محتملاً — نودّ أن نسمع منك.</span>
+          <span class="t-en">Whether you're an investor, a future resident, or a potential partner, we'd like to hear from you.</span>
+          <span class="t-ar">سواء كنت مستثمراً أو ساكناً مستقبلياً أو شريكاً محتملاً، نودّ أن نسمع منك.</span>
         </p>
         <div class="cinfo-list reveal">
           <div class="cinfo-item">
@@ -1171,8 +1203,8 @@
           <img src="logo-ar-dark.png" class="foot-logo-img logo-img-ar" alt="رسال للتطوير العقاري" />
         </div>
         <p>
-          <span class="t-en">A strategic real estate development alliance in AlMadinah AlMunawwarah, Saudi Arabia — integrating land, engineering, and capital to build communities that last.</span>
-          <span class="t-ar">تحالف استراتيجي للتطوير العقاري في المدينة المنورة — يجمع الأرض والهندسة ورأس المال لبناء مجتمعات دائمة.</span>
+          <span class="t-en">A strategic real estate development alliance in AlMadinah AlMunawwarah, Saudi Arabia, integrating land, engineering, and capital to build communities that last.</span>
+          <span class="t-ar">تحالف استراتيجي للتطوير العقاري في المدينة المنورة، يجمع الأرض والهندسة ورأس المال لبناء مجتمعات دائمة.</span>
         </p>
         <div class="foot-tagline">
           <span class="t-en">Integration Builds Trust</span>
