@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- SEO Title & Meta Description -->
   <title>رسال | مطور عقاري المدينة المنورة — أفضل شركات التطوير العقاري</title>
-  <meta name="description" content="رسال — أفضل مطور عقاري في المدينة المنورة وشركة استثمار عقاري رائدة. تحالف استراتيجي يجمع بين شركات عقارية بالمدينة المنورة لتطوير مجتمعات سكنية واستثمارية استثنائية." />
+  <meta name="description" content="رسال للتطوير العقاري — أفضل مطور عقاري في المدينة المنورة وشركة استثمار عقاري رائدة. تحالف استراتيجي يجمع أفضل شركات عقارية بالمدينة المنورة لتطوير مشاريع سكنية واستثمارية متكاملة." />
   <meta name="keywords" content="مطور عقاري المدينة المنورة, شركات عقارية المدينة المنورة, أفضل شركات التطوير العقاري في المدينة المنورة, شركة عقارية بالمدينة المنورة, شركة استثمار عقاري, Resal Real Estate" />
   <link rel="canonical" href="https://www.resalre.com/" />
   
   <!-- Open Graph / Social SEO -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="رسال للتطوير العقاري | مطور عقاري في المدينة المنورة" />
-  <meta property="og:description" content="تحالف استراتيجي لشركة استثمار عقاري ومطور عقاري بالمدينة المنورة — يجمع الأرض والهندسة ورأس المال تحت رؤية متكاملة واحدة." />
+  <meta property="og:title" content="رسال | مطور عقاري المدينة المنورة — أفضل شركات التطوير العقاري" />
+  <meta property="og:description" content="تحالف استراتيجي يضم أبرز شركات عقارية بالمدينة المنورة لتوفير فرص استثمارية وسكنية رائدة كأفضل شركة استثمار عقاري ومطور معتمد." />
   <meta property="og:url" content="https://www.resalre.com/" />
   <meta property="og:image" content="https://www.resalre.com/hero-poster.jpg" />
   <meta property="og:locale" content="ar_SA" />
@@ -22,7 +20,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="رسال | مطور عقاري المدينة المنورة" />
-  <meta name="twitter:description" content="أفضل شركات التطوير العقاري في المدينة المنورة — رسال شركة استثمار عقاري رائدة." />
+  <meta name="twitter:description" content="أفضل شركات التطوير العقاري في المدينة المنورة — شركة استثمار عقاري ومطور عقاري بالمدينة المنورة." />
   <meta name="twitter:image" content="https://www.resalre.com/hero-poster.jpg" />
 
   <!-- Preload critical resources -->
@@ -30,9 +28,18 @@
   <link rel="preload" as="font" href="fonts/29LT%20Azer%20Regular.otf" type="font/otf" crossorigin />
   <script src="https://www.google.com/recaptcha/api.js?render=6LdkroMtAAAAAENC9dThj2eMj5SAXnEUbfT2UJo-" async defer></script>
   
-  <!-- Prevent language FOUC: Default is Arabic -->
+  <!-- Prevent language FOUC: Arabic is default -->
   <script>
-    (function(){var l=localStorage.getItem('resal-lang');if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');}else{document.documentElement.setAttribute('lang','ar');document.documentElement.setAttribute('dir','rtl');}})();
+    (function(){
+      var l = localStorage.getItem('resal-lang');
+      if (l === 'en') {
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.setAttribute('dir', 'ltr');
+      } else {
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.setAttribute('dir', 'rtl');
+      }
+    })();
   </script>
   
   <style>
@@ -71,7 +78,6 @@
     .t-ar { display: none; }
     body.lang-ar .t-ar { display: revert; }
     body.lang-ar .t-en { display: none !important; }
-    /* Block-level Arabic text */
     .t-ar-block { display: none; }
     body.lang-ar .t-ar-block { display: block; }
     body.lang-ar .t-en-block { display: none !important; }
@@ -139,8 +145,6 @@
 
     /* ── HERO ───────────────────────────────────────────── */
     #hero { position: relative; height: 100vh; height: 100svh; min-height: min(700px, 100svh); display: flex; align-items: center; overflow: hidden; background: var(--dark); }
-
-    /* Video background */
     .hero-video-wrap { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
     .hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; opacity: .78; }
     #heroVideo::-webkit-media-controls,
@@ -164,7 +168,7 @@
     body.lang-ar .t-ar,
     body.lang-ar .t-ar-block { letter-spacing: 0 !important; text-transform: none !important; }
 
-    .hero-title { font-family: '29LT Azer', sans-serif; font-size: clamp(38px, 4.8vw, 72px); font-weight: 200; color: var(--white); line-height: 1.15; margin-bottom: 24px; font-style: normal; }
+    .hero-title { font-family: '29LT Azer', sans-serif; font-size: clamp(38px, 4.8vw, 72px); font-weight: 200; color: var(--white); line-height: 1.15; margin-bottom: 24px; }
     .hero-title em { font-style: italic; color: var(--tan); }
     .hero-desc { font-size: 17px; line-height: 1.82; color: rgba(255,255,255,.65); max-width: 580px; margin-bottom: 48px; }
     body.lang-ar .hero-desc { margin-right: 0; }
@@ -414,7 +418,6 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
 
-    /* ── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 1024px) {
       .values-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { gap: 52px; }
@@ -445,7 +448,6 @@
     strong, b { font-weight: 700; }
   </style>
 
-  <!-- Enhanced Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -535,7 +537,6 @@
 
 <!-- ════════ HERO ════════ -->
 <section id="hero">
-  <!-- Video -->
   <div class="hero-video-wrap">
     <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" poster="hero-poster.jpg" preload="metadata" style="pointer-events:none;">
       <source src="hero-web.mp4" type="video/mp4" />
@@ -554,14 +555,12 @@
         <span class="t-ar">المدينة المنورة، المملكة العربية السعودية</span>
       </div>
 
-      <!-- English headline -->
       <h1 class="hero-title t-en-block">Three Pillars, One Vision</h1>
-      <!-- Arabic headline (Primary Keyword Integrated) -->
       <h1 class="hero-title t-ar-block">رسال | <em>مطور عقاري المدينة المنورة</em> برؤية متكاملة</h1>
 
       <p class="hero-desc">
         <span class="t-en">Resal is a strategic real estate development alliance in AlMadinah AlMunawwarah — uniting land acquisition, engineering, and financial management under one integrated vision to shape communities built for life.</span>
-        <span class="t-ar">رسال هي وليدة تحالف استراتيجي يعد من <strong>أفضل شركات التطوير العقاري في المدينة المنورة</strong>، حيث نجمع بين تطوير الأراضي والهندسة كأبرز <strong>شركة عقارية بالمدينة المنورة</strong> تُقدم حلولاً متكاملة لصناعة مجتمعات تُبنى للحياة والاستثمار.</span>
+        <span class="t-ar">رسال هي وليدة تحالف استراتيجي يُعد من <strong>أفضل شركات التطوير العقاري في المدينة المنورة</strong>، حيث نجمع بين تطوير الأراضي والهندسة كأبرز <strong>شركة عقارية بالمدينة المنورة</strong> تُقدم حلولاً متكاملة لصناعة مجتمعات تُبنى للحياة والاستثمار.</span>
       </p>
 
       <div class="hero-actions">
@@ -582,7 +581,6 @@
 <div class="partner-bar">
   <div class="container" style="position:relative;">
     <div class="alliance-formation">
-      <!-- Three founding entities -->
       <div class="alliance-founders">
         <div class="af-item reveal">
           <div class="af-logo"><img src="logo-mothallath.svg" alt="شركة مثلث للتطوير والاستثمار" loading="lazy" /></div>
@@ -631,7 +629,7 @@
         </p>
         <p class="reveal">
           <span class="t-en">In Resal, we believe that true excellence is not measured by appearance alone, but by the depth of commitment and reliability behind every project we deliver.</span>
-          <span class="t-ar">في «رسال»، نرسخ مكانتنا كأحد <strong>أفضل شركات التطوير العقاري في المدينة المنورة</strong> من خلال الالتزام الصارم بالجودة وتوفير بيئة استثمارية وسكنية موثوقة في كل مشروع ننجزه.</span>
+          <span class="t-ar">في «رسال»، نرسخ مكانتنا كأحد <strong>أفضل شركات التطوير العقاري في المدينة المنورة</strong> من خلال الالتزام الصارم بالجودة وتوفير بيئة استثمارية وسكنية موثوقة.</span>
         </p>
 
         <div class="vm-grid reveal">
@@ -646,7 +644,7 @@
             <div class="vm-label"><span class="t-en">Mission</span><span class="t-ar">مهمتنا</span></div>
             <div class="vm-text">
               <span class="t-en">To develop homes in AlMadinah AlMunawwarah shaped by their architecture, refined by the standards behind every detail, and carried by the values that guide how we build and how we deliver.</span>
-              <span class="t-ar">تطوير مشاريع سكنية وتجارية راقية في المدينة المنورة تُجسد المعايير الهندسية الحديثة، وتلبي تطلعات المستثمرين والسكان وفق أعلى معايير الجودة والتنفيذ.</span>
+              <span class="t-ar">تطوير مشاريع سكنية وتجارية راقية في المدينة المنورة تُجسد المعايير الهندسية الحديثة، وتلبي تطلعات المستثمرين والسكان.</span>
             </div>
           </div>
         </div>
@@ -693,7 +691,7 @@
         <div class="val-en-lbl">Ambition</div>
         <p class="val-desc">
           <span class="t-en">We create communities that shape the future — developments that go beyond shelter to forge identity, belonging, and vision.</span>
-          <span class="t-ar">نبني مجتمعات تصنع المستقبل — مشاريع تتجاوز مجرد البناء لترسخ هوية معمارية فريدة تليق بطيبة الطيبة.</span>
+          <span class="t-ar">نبني مجتمعات تصنع المستقبل — مشاريع تتجاوز مجرد البناء لترسخ هوية معمارية فريدة.</span>
         </p>
       </div>
       <div class="val-card reveal d1">
@@ -711,7 +709,7 @@
         <div class="val-en-lbl">Transparency</div>
         <p class="val-desc">
           <span class="t-en">Clear figures, reliable details, and honest communication at every stage — from land acquisition through to handover.</span>
-          <span class="t-ar">بيانات دقيقة، وضوح تام في الشراكات، وتواصل مهني في كل مرحلة استثمارية من التخطيط إلى التسليم.</span>
+          <span class="t-ar">بيانات دقيقة، وضوح تام في الشراكات، وتواصل مهني في كل مرحلة استثمارية.</span>
         </p>
       </div>
       <div class="val-card reveal d2">
@@ -725,7 +723,7 @@
         <div class="val-en-lbl">Reliability</div>
         <p class="val-desc">
           <span class="t-en">Built on years of experience, integrated expertise, and an unwavering commitment to execution quality and delivery timelines.</span>
-          <span class="t-ar">خبرات تراكمية تجمع كبرى المؤسسات العقارية لضمان دقة مواعيد التسليم وأعلى جودة تنفيذية.</span>
+          <span class="t-ar">خبرات تراكمية تجمع كبرى المؤسسات العقارية لضمان دقة مواعيد التسليم والجودة.</span>
         </p>
       </div>
       <div class="val-card reveal d3">
@@ -740,7 +738,7 @@
         <div class="val-en-lbl">Value</div>
         <p class="val-desc">
           <span class="t-en">Sustainable value creation for residents, investors, and the broader AlMadinah AlMunawwarah community — now and for generations ahead.</span>
-          <span class="t-ar">تعظيم العوائد وتحقيق قيمة استثمارية مستدامة للأفراد والشركاء في السوق العقاري بالمدينة المنورة.</span>
+          <span class="t-ar">تعظيم العوائد وتحقيق قيمة استثمارية مستدامة للأفراد والشركاء في السوق العقاري.</span>
         </p>
       </div>
     </div>
@@ -758,7 +756,7 @@
     </h2>
     <p class="lead reveal">
       <span class="t-en">Four operational pillars form the foundation of every project Resal delivers — a methodology built for the demands of AlMadinah AlMunawwarah's evolving real estate landscape.</span>
-      <span class="t-ar">أربع ركائز تشغيلية تصنع تفوق رسال كأفضل <strong>شركة عقارية بالمدينة المنورة</strong> لتلبية تطلعات السوق العقاري الواعد.</span>
+      <span class="t-ar">أربع ركائز تشغيلية تصنع تفوق رسال كأفضل <strong>شركة عقارية بالمدينة المنورة</strong> لتلبية تطلعات السوق.</span>
     </p>
     <div class="way-grid">
       <div class="way-card reveal">
@@ -769,7 +767,7 @@
         </div>
         <p class="way-desc">
           <span class="t-en">Every decision is anchored in clear governance structures, ensuring accountability from the first land survey through to project completion and post-handover support.</span>
-          <span class="t-ar">هياكل إدارية تضمن الشفافية والدقة من دراسات الجدوى واختيار الأراضي حتى التسليم النهائي وخدمة ما بعد البيع.</span>
+          <span class="t-ar">هياكل إدارية تضمن الشفافية والدقة من دراسات الجدوى حتى التسليم النهائي وخدمة ما بعد البيع.</span>
         </p>
       </div>
       <div class="way-card reveal d1">
@@ -780,7 +778,7 @@
         </div>
         <p class="way-desc">
           <span class="t-en">We embrace innovation not for its own sake, but when it meaningfully improves quality, efficiency, or the living experience for our residents and investors.</span>
-          <span class="t-ar">نوظف أحدث تقنيات الهندسة والبناء لتحسين جودة الحياة ورفع الكفاءة التشغيلية للمشاريع السكنية.</span>
+          <span class="t-ar">نوظف أحدث تقنيات الهندسة والبناء لتحسين جودة الحياة ورفع الكفاءة التشغيلية للمشاريع.</span>
         </p>
       </div>
       <div class="way-card reveal d1">
@@ -791,7 +789,7 @@
         </div>
         <p class="way-desc">
           <span class="t-en">Our developments are planned around how people actually live — blending architecture, amenities, and community space into environments that feel like home from day one.</span>
-          <span class="t-ar">تصميم وحدات ومجتمعات تناسب متطلبات العائلة السعودية وتوفر كافة المرافق الخدمية الحيوية.</span>
+          <span class="t-ar">تصميم وحدات ومجتمعات تناسب متطلبات العائلة السعودية وتوفر كافة المرافق الخدمية.</span>
         </p>
       </div>
       <div class="way-card reveal d2">
@@ -802,7 +800,7 @@
         </div>
         <p class="way-desc">
           <span class="t-en">Data-informed site selection, partnership networks, and market intelligence guide our strategic decisions, delivering projects with long-term relevance and value.</span>
-          <span class="t-ar">دراسة معمقة للمواقع الاستراتيجية في المدينة المنورة لضمان تحقيق أعلى عائد استثماري للمستثمرين.</span>
+          <span class="t-ar">دراسة معمقة للمواقع الاستراتيجية في المدينة المنورة لضمان تحقيق أعلى عائد استثماري.</span>
         </p>
       </div>
     </div>
@@ -885,7 +883,7 @@
           </div>
           <p class="svc-row-desc">
             <span class="t-en">Our commitment does not end at handover. We provide comprehensive maintenance programmes and ongoing support services to ensure every property remains in optimal condition and retains its value over time.</span>
-            <span class="t-ar">نضمن استدامة القيمة العقارية عبر برامج صيانة دورية، وحلول إدارة المرافق المتكاملة للحفاظ على جودة الأصول وراحة الملاك.</span>
+            <span class="t-ar">نضمن استدامة القيمة العقارية عبر برامج صيانة دورية، وحلول إدارة المرافق المتكاملة للحفاظ على جودة الأصول.</span>
           </p>
         </div>
         <div class="svc-row-icon">
@@ -968,7 +966,7 @@
 
       <p class="ip-desc">
         <span class="t-en">Resal's first development in AlMadinah AlMunawwarah — a landmark residential project. Founder's Club members get priority access to units, pricing, and project milestones before public launch.</span>
-        <span class="t-ar">أولى أيقونات رسال كـ <strong>مطور عقاري المدينة المنورة</strong> — مشروع سكني واستثماري متكامل. انضم لنادي المؤسسين للحصول على أولوية حجز الوحدات والأسعار التنافسية قبل الطرح الرسمي.</span>
+        <span class="t-ar">أولى أيقونات رسال كـ <strong>مطور عقاري المدينة المنورة</strong> — مشروع سكني واستثماري متكامل. انضم لنادي المؤسسين للحصول على أولوية حجز الوحدات والأسعار التنافسية.</span>
       </p>
 
       <a href="#contact" class="ip-cta">
@@ -998,7 +996,6 @@
     </div>
 
     <div class="news-grid">
-      <!-- Featured article -->
       <div class="news-featured reveal">
         <div class="nf-img">
           <img src="news-signing.jpeg" alt="تأسيس رسال - تحالف شركات عقارية بالمدينة المنورة" style="object-position: center 25%;" loading="lazy" />
@@ -1014,7 +1011,7 @@
           </div>
           <p class="n-excerpt">
             <span class="t-en">Three of AlMadinah AlMunawwarah's most respected entities — Mothallath, Reem Taibah, and Asasiat Alemaar — have formalised a landmark alliance to launch Resal Real Estate, an integrated development platform uniting land, engineering, and capital under one vision.</span>
-            <span class="t-ar">وقّعت كبرى الكيانات الرائدة (مثلث، ريم طيبة، وأساسيات الإعمار) اتفاقية تأسيس رسال؛ لتشكل قوة استثمارية رائدة بين <strong>شركات عقارية المدينة المنورة</strong> تخدم مسيرة التنمية العمرانية.</span>
+            <span class="t-ar">وقّعت كبرى الكيانات الرائدة اتفاقية تأسيس رسال؛ لتشكل قوة استثمارية رائدة بين <strong>شركات عقارية المدينة المنورة</strong> تخدم مسيرة التنمية العمرانية.</span>
           </p>
           <span class="n-link" style="cursor:default;opacity:.45;">
             <span class="t-en">Coming soon</span><span class="t-ar">التفاصيل قريباً</span>
@@ -1022,9 +1019,7 @@
         </div>
       </div>
 
-      <!-- Side stack -->
       <div class="news-stack">
-        <!-- Article 2 -->
         <div class="news-card reveal d1">
           <div class="nc-body">
             <div class="n-meta">
@@ -1046,7 +1041,6 @@
           </div>
         </div>
 
-        <!-- Article 3 -->
         <div class="news-card reveal d2">
           <div class="nc-body">
             <div class="n-meta">
@@ -1059,7 +1053,7 @@
             </div>
             <p class="n-excerpt">
               <span class="t-en">Driven by Vision 2030 investments, growing pilgrimage demand, and a rising residential base, AlMadinah AlMunawwarah is fast becoming one of the Kingdom's most dynamic real estate markets.</span>
-              <span class="t-ar">بفضل رؤية المملكة 2030 وتزايد الطلب السكني، أصبحت طيبة الطيبة الوجهة المثالية للباحثين عن <strong>شركة استثمار عقاري</strong> موثوقة لتحقيق عوائد قوية.</span>
+              <span class="t-ar">بفضل رؤية المملكة 2030، أصبحت المدينة المنورة الوجهة المثالية للباحثين عن <strong>شركة استثمار عقاري</strong> موثوقة لتحقيق عوائد قوية.</span>
             </p>
             <a href="#" class="n-link">
               <span class="t-en">Read more</span><span class="t-ar">اقرأ المزيد</span>
@@ -1228,9 +1222,7 @@
   </div>
 </footer>
 
-<!-- ════════ SCRIPTS ════════ -->
 <script>
-  /* ── LANGUAGE TOGGLE (Arabic Default) ── */
   const html = document.getElementById('html-root');
   const body = document.getElementById('body-root');
 
@@ -1273,17 +1265,14 @@
   document.getElementById('langToggle').addEventListener('click', toggleLang);
   document.getElementById('mobLang').addEventListener('click', toggleLang);
 
-  // Restore or default to Arabic
   const saved = localStorage.getItem('resal-lang') || 'ar';
   setLang(saved);
 
-  /* ── NAV SCROLL ───────────────────────────────────── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
-  /* ── HAMBURGER ────────────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const mobMenu = document.getElementById('mobMenu');
   hamburger.addEventListener('click', () => {
@@ -1312,7 +1301,6 @@
     }
   });
 
-  /* ── SCROLL REVEAL ────────────────────────────────── */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
@@ -1320,7 +1308,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* ── VIDEO AUTOPLAY ───────────────────────────────── */
   const heroVideo = document.getElementById('heroVideo');
   const videoTapLayer = document.getElementById('videoTapLayer');
   if (heroVideo) {
@@ -1358,7 +1345,6 @@
     });
   }
 
-  /* ── FORM ─────────────────────────────────────────── */
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbA__MHBESPxWXs5FBnveqf1Qb3I33cp8cI4J6pOtIw6A6mJ1SSzulkUw65CqQ6rLQ/exec';
 
   function handleForm(e) {
@@ -1376,7 +1362,7 @@
 
     const required = [firstName, lastName, emailInp, phoneInp, roleInp, msgInp];
     let valid = true;
-    required.forEach(el => {
+    required.reload = required.forEach(el => {
       el.style.borderColor = '';
       if (!el.value.trim()) { el.style.borderColor = '#c0392b'; valid = false; }
     });
