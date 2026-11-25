@@ -9,8 +9,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="راديسون سويتس المدينة المنورة — رسال للتطوير العقاري" />
   <meta property="og:url" content="https://www.resalre.com/radisson" />
-  <meta property="og:image" content="https://www.resalre.com/hero-poster.jpg" />
+  <meta property="og:image" content="https://www.resalre.com/radisson-images/hero-golden.jpg" />
   <link rel="preload" as="font" href="fonts/29LT%20Azer%20Regular.otf" type="font/otf" crossorigin />
+  <link rel="preload" as="image" href="radisson-images/hero-golden.jpg" />
   <script>
     (function(){var l=localStorage.getItem('resal-lang');if(l==='en'){document.documentElement.setAttribute('lang','en');document.documentElement.setAttribute('dir','ltr');}})();
   </script>
@@ -24,28 +25,29 @@
     @font-face { font-family: '29LT Azer'; src: url('fonts/29LT Azer Black.otf') format('opentype'); font-weight: 900; font-display: swap; }
   </style>
   <style>
-    /* ── TOKENS ─────────────────────────────────────────── */
+    /* ── TOKENS ─────────────────────────────────── */
     :root {
-      --brown:           #7C5D3B;
-      --tan:             #AE9573;
-      --dark:            #3E3A36;
-      --cream:           #EAE7E3;
-      --white:           #FFFFFF;
-      --ease:            cubic-bezier(.4,0,.2,1);
-      --nav-scrolled-bg: rgba(62,58,54,.94);
+      --cream:  #F2EDE6;
+      --cream2: #E8E0D6;
+      --brown:  #7C5D3B;
+      --tan:    #AE9573;
+      --dark:   #221F1A;
+      --mid:    rgba(34,31,26,.45);
+      --ease:   cubic-bezier(.4,0,.2,1);
+      --nav-bg: rgba(242,237,230,.92);
     }
 
-    /* ── RESET ──────────────────────────────────────────── */
+    /* ── RESET ───────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: '29LT Azer', sans-serif;
-      background: var(--dark);
+      background: var(--cream);
       color: var(--dark);
       overflow-x: hidden;
     }
 
-    /* ── BILINGUAL ───────────────────────────────────────── */
+    /* ── BILINGUAL ───────────────────────────────── */
     body.lang-ar { direction: rtl; }
     .t-ar { display: none; }
     body.lang-ar .t-ar { display: revert; }
@@ -53,472 +55,346 @@
     .t-ar-block { display: none; }
     body.lang-ar .t-ar-block { display: block; }
     body.lang-ar .t-en-block { display: none !important; }
-    body.lang-ar .t-ar,
-    body.lang-ar .t-ar-block { letter-spacing: 0 !important; text-transform: none !important; }
 
-    /* ── UTILITY ─────────────────────────────────────────── */
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 36px); }
-    .eyebrow { font-size: 14px; letter-spacing: .26em; text-transform: uppercase; color: var(--tan); margin-bottom: 12px; font-weight: 500; }
-    strong, b { font-weight: 700; }
+    /* ── UTILITY ─────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
+    .label {
+      font-size: 11px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--tan);
+      display: block;
+      margin-bottom: 20px;
+    }
+    body.lang-ar .label { letter-spacing: 0; font-size: 12px; }
 
-    /* ── NAV ─────────────────────────────────────────────── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 14px 0; transition: all .4s var(--ease); }
-    nav.scrolled { background: var(--nav-scrolled-bg); backdrop-filter: blur(14px); padding: 10px 0; box-shadow: 0 2px 40px rgba(0,0,0,.18); }
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 18px 0;
+      transition: all .4s var(--ease);
+    }
+    nav.scrolled {
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      padding: 12px 0;
+      box-shadow: 0 1px 0 rgba(34,31,26,.08);
+    }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; text-decoration: none; }
-    .logo-img { height: 58px; width: auto; display: block; filter: brightness(0) invert(1); }
-    nav.scrolled .logo-img { height: 46px; }
+    .logo-img { height: 54px; width: auto; transition: height .4s var(--ease); }
+    nav.scrolled .logo-img { height: 42px; }
     .logo-img-en { display: block; }
     .logo-img-ar { display: none; }
     body.lang-ar .logo-img-en { display: none; }
     body.lang-ar .logo-img-ar { display: block; }
-    @media (max-width: 768px) {
-      .logo-img { height: 56px; }
-      nav.scrolled .logo-img { height: 56px; }
+    @media (max-width: 768px) { .logo-img { height: 48px; } nav.scrolled .logo-img { height: 48px; } }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(34,31,26,.5); transition: color .25s; text-decoration: none;
     }
-
-    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 14px; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.65); transition: color .25s; text-decoration: none; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-
-    .nav-end { display: flex; align-items: center; gap: 14px; }
-    .lang-btn { font-size: 13px; letter-spacing: .16em; color: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.18); padding: 10px 22px; cursor: pointer; background: none; font-family: '29LT Azer', sans-serif; transition: all .25s; }
-    .lang-btn:hover { color: var(--white); border-color: rgba(255,255,255,.5); }
-    .nav-cta { font-size: 13px; letter-spacing: .15em; text-transform: uppercase; padding: 10px 22px; border: 1px solid rgba(174,149,115,.5); color: var(--tan); text-decoration: none; transition: all .25s; }
-    .nav-cta:hover { background: var(--brown); border-color: var(--brown); color: var(--white); }
+    .nav-links a:hover, .nav-links a.active { color: var(--dark); }
+    .nav-end { display: flex; align-items: center; gap: 12px; }
+    .lang-btn {
+      font-family: '29LT Azer', sans-serif;
+      font-size: 12px; letter-spacing: .18em;
+      color: rgba(34,31,26,.4);
+      border: 1px solid rgba(34,31,26,.15);
+      padding: 9px 20px; cursor: pointer; background: none;
+      transition: all .25s;
+    }
+    .lang-btn:hover { color: var(--dark); border-color: rgba(34,31,26,.4); }
+    .nav-cta {
+      font-size: 12px; letter-spacing: .15em; text-transform: uppercase;
+      padding: 9px 22px; border: 1px solid rgba(124,93,59,.35);
+      color: var(--brown); text-decoration: none; transition: all .25s;
+    }
+    .nav-cta:hover { background: var(--brown); color: #fff; border-color: var(--brown); }
 
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all .3s; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--dark); transition: all .3s; }
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
 
-    .mob-menu { display: none; position: fixed; inset: 0; background: rgba(62,58,54,.98); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    .mob-menu {
+      display: none; position: fixed; inset: 0;
+      background: var(--cream); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+    }
     .mob-menu.open { display: flex; }
-    .mob-menu a { font-family: '29LT Azer', sans-serif; font-size: 38px; font-weight: 300; color: var(--white); text-decoration: none; }
-    .mob-lang { font-size: 14px; letter-spacing: .2em; color: var(--tan); background: none; border: 1px solid rgba(174,149,115,.4); padding: 10px 24px; cursor: pointer; font-family: '29LT Azer', sans-serif; margin-top: 8px; }
+    .mob-menu a { font-size: 34px; font-weight: 200; color: var(--dark); text-decoration: none; }
+    .mob-lang {
+      font-size: 13px; letter-spacing: .2em; color: var(--tan);
+      background: none; border: 1px solid rgba(174,149,115,.4);
+      padding: 10px 24px; cursor: pointer; font-family: '29LT Azer', sans-serif; margin-top: 8px;
+    }
 
-    /* ── PROJECT HERO ─────────────────────────────────────── */
-    .proj-hero {
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 80px;
-      background: #1a1714;
+      height: 100vh;
+      min-height: 600px;
       overflow: hidden;
     }
-    .proj-hero-bg {
+    .hero-img {
       position: absolute; inset: 0;
-      background-image: url('pattern.svg');
-      background-size: 220% 220%;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: .05;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-    .proj-hero-gradient {
+    .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(26,23,20,.96) 0%, rgba(26,23,20,.5) 50%, rgba(26,23,20,.2) 100%);
+      background: linear-gradient(to top, rgba(34,31,26,.75) 0%, rgba(34,31,26,.2) 55%, rgba(34,31,26,.05) 100%);
     }
-    .proj-hero-inner { position: relative; width: 100%; }
-    .proj-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      border: 1px solid rgba(174,149,115,.35);
-      padding: 8px 18px;
-      margin-bottom: 28px;
+    .hero-content {
+      position: absolute;
+      bottom: clamp(48px, 8vh, 90px);
+      left: clamp(20px, 5vw, 80px);
+      right: clamp(20px, 5vw, 80px);
     }
-    .proj-badge-dot { width: 6px; height: 6px; background: var(--tan); border-radius: 50%; }
-    .proj-badge span { font-size: 12px; letter-spacing: .28em; text-transform: uppercase; color: var(--tan); }
-    body.lang-ar .proj-badge span { letter-spacing: 0; font-size: 13px; }
-    .proj-hero-title {
-      font-size: clamp(44px, 6vw, 96px);
+    .hero-eyebrow {
+      font-size: 11px; letter-spacing: .32em; text-transform: uppercase;
+      color: rgba(255,255,255,.55); margin-bottom: 16px;
+    }
+    body.lang-ar .hero-eyebrow { letter-spacing: 0; font-size: 12px; }
+    .hero-title {
+      font-size: clamp(52px, 8vw, 120px);
       font-weight: 200;
-      color: var(--white);
-      line-height: 1.04;
-      margin-bottom: 10px;
+      color: #fff;
+      line-height: 1.0;
+      margin-bottom: 36px;
     }
-    .proj-hero-title em { font-style: normal; color: var(--tan); }
-    .proj-hero-sub {
-      font-size: clamp(16px, 2vw, 22px);
-      font-weight: 300;
-      color: rgba(255,255,255,.45);
-      margin-bottom: 48px;
-      letter-spacing: .04em;
-    }
-    body.lang-ar .proj-hero-sub { letter-spacing: 0; }
-
-    /* Hero stat strip */
-    .hero-stats {
-      display: flex;
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,.1);
-      padding-top: 36px;
-      flex-wrap: wrap;
-    }
-    .hs-item {
-      flex: 1;
-      min-width: 130px;
-      padding: 0 32px 0 0;
-      border-right: 1px solid rgba(255,255,255,.1);
-      margin-bottom: 20px;
-    }
-    body.lang-ar .hs-item { padding: 0 0 0 32px; border-right: none; border-left: 1px solid rgba(255,255,255,.1); }
-    .hs-item:first-child { padding-left: 0; }
-    body.lang-ar .hs-item:first-child { padding-right: 0; }
-    .hs-item:last-child { border: none; }
-    .hs-num {
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 200;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .hs-num span { font-size: .45em; color: var(--tan); font-weight: 400; }
-    .hs-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.38); }
-    body.lang-ar .hs-label { letter-spacing: 0; font-size: 13px; }
-
-    /* Hero CTA */
-    .hero-ctas { display: flex; gap: 14px; margin-bottom: 48px; flex-wrap: wrap; }
-    .btn-primary {
-      font-family: '29LT Azer', sans-serif;
-      font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
-      padding: 16px 36px;
-      background: var(--brown);
-      color: var(--white);
-      border: none; cursor: pointer;
-      text-decoration: none;
-      transition: background .25s;
+    .hero-title em { font-style: normal; color: rgba(174,149,115,.9); }
+    .hero-cta {
       display: inline-block;
-    }
-    body.lang-ar .btn-primary { letter-spacing: 0; font-size: 14px; }
-    .btn-primary:hover { background: #6a4f31; }
-    .btn-outline {
       font-family: '29LT Azer', sans-serif;
-      font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
-      padding: 15px 36px;
-      background: none;
-      color: rgba(255,255,255,.65);
-      border: 1px solid rgba(255,255,255,.2);
-      cursor: pointer;
+      font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+      padding: 14px 40px;
+      border: 1px solid rgba(255,255,255,.45);
+      color: rgba(255,255,255,.8);
       text-decoration: none;
-      transition: all .25s;
-      display: inline-block;
+      transition: all .3s;
     }
-    body.lang-ar .btn-outline { letter-spacing: 0; font-size: 14px; }
-    .btn-outline:hover { border-color: var(--tan); color: var(--tan); }
+    body.lang-ar .hero-cta { letter-spacing: 0; font-size: 13px; }
+    .hero-cta:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.8); color: #fff; }
 
-    /* ── OVERVIEW ─────────────────────────────────────────── */
-    .overview { background: var(--cream); padding: 100px 0; }
-    .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .overview-text h2 {
+    /* ── INTRO ────────────────────────────────────── */
+    .intro { padding: clamp(80px, 12vh, 120px) 0 clamp(60px, 8vh, 90px); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(40px, 6vw, 100px); align-items: start; }
+    .intro-heading {
       font-size: clamp(32px, 4vw, 56px);
       font-weight: 200;
       color: var(--dark);
       line-height: 1.18;
-      margin-bottom: 24px;
-    }
-    .overview-text h2 em { font-style: normal; color: var(--brown); }
-    .overview-text p {
-      font-size: 17px;
-      line-height: 1.9;
-      color: rgba(62,58,54,.58);
-      margin-bottom: 20px;
-    }
-    .overview-box {
-      background: var(--white);
-      padding: 32px 36px;
-      border-left: 3px solid var(--tan);
-    }
-    body.lang-ar .overview-box { border-left: none; border-right: 3px solid var(--tan); }
-    .overview-box p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(62,58,54,.55);
-      margin: 0;
-    }
-    .overview-box strong { color: var(--dark); font-weight: 500; }
-
-    .overview-facts { display: flex; flex-direction: column; gap: 2px; }
-    .of-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      background: var(--white);
-      padding: 20px 28px;
-      gap: 16px;
-    }
-    .of-row:nth-child(even) { background: #F4F1ED; }
-    .of-label { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: rgba(62,58,54,.45); }
-    body.lang-ar .of-label { letter-spacing: 0; font-size: 14px; }
-    .of-val { font-size: 17px; font-weight: 500; color: var(--dark); text-align: left; }
-    body.lang-ar .of-val { text-align: right; }
-
-    /* ── LOCATION ─────────────────────────────────────────── */
-    .location { background: #1a1714; padding: 100px 0; }
-    .section-header { margin-bottom: 60px; }
-    .section-header h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 200;
-      color: var(--white);
-      line-height: 1.15;
       margin-top: 10px;
     }
-    .section-header h2 em { font-style: normal; color: var(--tan); }
-
-    .loc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
-    .loc-card {
-      background: rgba(255,255,255,.04);
-      padding: 36px 28px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,.07);
-      transition: background .25s;
+    .intro-heading em { font-style: normal; color: var(--tan); }
+    .intro-text {
+      font-size: 17px; line-height: 1.9;
+      color: var(--mid); margin-bottom: 36px;
     }
-    .loc-card:hover { background: rgba(174,149,115,.08); }
-    .loc-num {
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 100;
-      color: var(--tan);
-      line-height: 1;
-      margin-bottom: 4px;
+    .stats-row {
+      display: flex;
+      border-top: 1px solid rgba(34,31,26,.1);
+      padding-top: 32px;
+      gap: 0;
     }
-    .loc-unit { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 14px; }
-    body.lang-ar .loc-unit { letter-spacing: 0; }
-    .loc-name { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.4; }
-
-    /* ── UNITS ────────────────────────────────────────────── */
-    .units { background: var(--cream); padding: 100px 0; }
-    .units-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
-    .unit-card {
-      background: var(--white);
-      overflow: hidden;
-      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-    }
-    .unit-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(62,58,54,.1); }
-    .unit-card.featured { background: var(--dark); }
-    .unit-top { padding: 36px 32px 28px; }
-    .unit-type {
-      font-size: 11px; letter-spacing: .28em; text-transform: uppercase;
-      color: var(--tan); margin-bottom: 12px;
-    }
-    body.lang-ar .unit-type { letter-spacing: 0; font-size: 13px; }
-    .unit-name {
-      font-size: clamp(22px, 2.5vw, 32px);
-      font-weight: 200;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-    .unit-card.featured .unit-name { color: var(--white); }
-    .unit-area {
-      font-size: 15px;
-      color: rgba(62,58,54,.45);
-    }
-    .unit-card.featured .unit-area { color: rgba(255,255,255,.4); }
-    .unit-divider { height: 1px; background: rgba(62,58,54,.08); margin: 0 32px; }
-    .unit-card.featured .unit-divider { background: rgba(255,255,255,.1); }
-    .unit-bottom { padding: 24px 32px 36px; }
-    .unit-price-label { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(62,58,54,.35); margin-bottom: 6px; }
-    body.lang-ar .unit-price-label { letter-spacing: 0; font-size: 12px; }
-    .unit-card.featured .unit-price-label { color: rgba(255,255,255,.3); }
-    .unit-price {
-      font-size: clamp(18px, 2vw, 24px);
-      font-weight: 300;
-      color: var(--dark);
-      margin-bottom: 4px;
-    }
-    .unit-card.featured .unit-price { color: var(--white); }
-    .unit-price-sub { font-size: 13px; color: var(--tan); }
-    .unit-specs { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
-    .unit-spec { display: flex; justify-content: space-between; font-size: 14px; }
-    .unit-spec-k { color: rgba(62,58,54,.4); }
-    .unit-card.featured .unit-spec-k { color: rgba(255,255,255,.3); }
-    .unit-spec-v { color: var(--dark); font-weight: 500; }
-    .unit-card.featured .unit-spec-v { color: rgba(255,255,255,.85); }
-
-    /* ── MARKET ───────────────────────────────────────────── */
-    .market { background: var(--dark); padding: 100px 0; }
-    .market h2 { color: var(--white); }
-    .market-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; margin-top: 48px; }
-    .mkt-card {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      padding: 44px 40px;
-      transition: background .3s;
-    }
-    .mkt-card:hover { background: rgba(174,149,115,.06); }
-    .mkt-num {
-      font-size: clamp(44px, 5.5vw, 72px);
-      font-weight: 100;
-      color: var(--tan);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .mkt-num sup { font-size: .4em; vertical-align: super; }
-    .mkt-title { font-size: 18px; font-weight: 300; color: var(--white); margin-bottom: 10px; }
-    .mkt-desc { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,.35); }
-
-    /* ── AMENITIES ────────────────────────────────────────── */
-    .amenities { background: var(--cream); padding: 100px 0; }
-    .amen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 48px; }
-    .amen-card {
-      background: var(--white);
-      padding: 36px 28px;
-      text-align: center;
-      transition: transform .3s var(--ease);
-    }
-    .amen-card:hover { transform: translateY(-4px); }
-    .amen-icon {
-      width: 52px; height: 52px;
-      border: 1px solid rgba(124,93,59,.25);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px;
-    }
-    .amen-icon svg { width: 22px; height: 22px; stroke: var(--tan); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-    .amen-title { font-size: 16px; font-weight: 500; color: var(--dark); margin-bottom: 8px; }
-    .amen-desc { font-size: 14px; line-height: 1.65; color: rgba(62,58,54,.45); }
-
-    /* ── PAYMENT ──────────────────────────────────────────── */
-    .payment { background: #1a1714; padding: 100px 0; }
-    .pay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 48px; }
-    .pay-card {
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.07);
-      padding: 44px 40px;
-    }
-    .pay-num {
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 100;
-      color: var(--tan);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .pay-title { font-size: 18px; font-weight: 300; color: var(--white); margin-bottom: 10px; }
-    .pay-desc { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,.38); }
-    .pay-steps { margin-top: 48px; border-top: 1px solid rgba(255,255,255,.07); padding-top: 48px; }
-    .pay-steps h3 { font-size: 20px; font-weight: 300; color: var(--white); margin-bottom: 32px; }
-    .steps-row { display: flex; gap: 2px; }
-    .step {
+    .stat {
       flex: 1;
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      padding: 28px 24px;
-      position: relative;
+      padding-right: 32px;
+      border-right: 1px solid rgba(34,31,26,.1);
     }
-    .step-num {
-      font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
-      color: var(--tan); margin-bottom: 10px;
-    }
-    body.lang-ar .step-num { letter-spacing: 0; }
-    .step-title { font-size: 16px; font-weight: 400; color: var(--white); margin-bottom: 8px; }
-    .step-desc { font-size: 13px; line-height: 1.65; color: rgba(255,255,255,.35); }
-
-    /* ── CTA BAND ─────────────────────────────────────────── */
-    .cta-band { background: var(--brown); padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
-    .cta-band::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url('pattern.svg');
-      background-size: 180% 180%;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: .08;
-    }
-    .cta-inner { position: relative; }
-    .cta-band h2 {
-      font-size: clamp(28px, 4vw, 52px);
+    body.lang-ar .stat { padding-right: 0; padding-left: 32px; border-right: none; border-left: 1px solid rgba(34,31,26,.1); }
+    .stat:last-child { padding-right: 0; border: none; }
+    body.lang-ar .stat:last-child { padding-left: 0; }
+    .stat-num {
+      font-size: clamp(32px, 4vw, 52px);
       font-weight: 200;
-      color: var(--white);
-      margin-bottom: 16px;
-      line-height: 1.2;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 4px;
     }
-    .cta-band p { font-size: 17px; color: rgba(255,255,255,.6); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
-    .cta-band .btn-white {
-      font-family: '29LT Azer', sans-serif;
-      font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
-      padding: 16px 44px;
-      background: var(--white);
-      color: var(--brown);
-      border: none; cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all .25s;
-    }
-    body.lang-ar .cta-band .btn-white { letter-spacing: 0; font-size: 14px; }
-    .cta-band .btn-white:hover { background: var(--cream); }
+    .stat-label { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--tan); }
+    body.lang-ar .stat-label { letter-spacing: 0; font-size: 12px; }
 
-    /* ── FOOTER ───────────────────────────────────────────── */
-    footer { background: #1a1714; padding: 72px 0 32px; position: relative; overflow: hidden; border-top: 1px solid rgba(255,255,255,.06); }
-    footer::before { content: ''; position: absolute; inset: 0; background-image: url('pattern.svg'); background-size: 160% 160%; background-repeat: no-repeat; background-position: center; opacity: .03; pointer-events: none; z-index: 0; }
-    .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; position: relative; }
-    .foot-logo-wrap { overflow: hidden; height: 90px; }
-    .foot-logo-img { height: 90px; width: auto; display: block; }
+    /* ── FULL IMAGE ───────────────────────────────── */
+    .full-img { overflow: hidden; }
+    .full-img img { width: 100%; height: clamp(300px, 55vw, 700px); object-fit: cover; display: block; }
+    .full-img.tall img { height: clamp(400px, 70vw, 860px); }
+
+    /* ── SUITES ───────────────────────────────────── */
+    .suites { padding: clamp(80px, 12vh, 120px) 0; }
+    .suites-header { margin-bottom: 52px; }
+    .suites-heading {
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 200;
+      color: var(--dark);
+      margin-top: 10px;
+    }
+    .suites-grid { display: flex; flex-direction: column; gap: 2px; }
+    .suite-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 48px);
+      background: var(--cream2);
+      transition: background .25s;
+      gap: 20px;
+    }
+    .suite-row:hover { background: #DDD5C8; }
+    .suite-name {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 200;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .suite-type { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--tan); margin-bottom: 10px; }
+    body.lang-ar .suite-type { letter-spacing: 0; font-size: 12px; }
+    .suite-right { text-align: left; flex-shrink: 0; }
+    body.lang-ar .suite-right { text-align: right; }
+    .suite-area { font-size: clamp(28px, 4vw, 48px); font-weight: 100; color: var(--dark); line-height: 1; }
+    .suite-area-unit { font-size: 14px; color: var(--tan); font-weight: 400; }
+    .suite-beds { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-top: 6px; }
+    body.lang-ar .suite-beds { letter-spacing: 0; }
+    .suite-arrow { font-size: 20px; color: rgba(34,31,26,.2); flex-shrink: 0; transition: color .25s; }
+    .suite-row:hover .suite-arrow { color: var(--tan); }
+
+    /* ── LOCATION ────────────────────────────────── */
+    .location { padding: clamp(80px, 10vh, 110px) 0; border-top: 1px solid rgba(34,31,26,.08); border-bottom: 1px solid rgba(34,31,26,.08); }
+    .location-header { margin-bottom: 52px; }
+    .loc-heading { font-size: clamp(28px, 3.5vw, 48px); font-weight: 200; color: var(--dark); margin-top: 10px; }
+    .location-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+    .loc-item {
+      padding: 36px 24px;
+      background: var(--cream2);
+      text-align: center;
+    }
+    .loc-num { font-size: clamp(44px, 6vw, 72px); font-weight: 100; color: var(--dark); line-height: 1; }
+    .loc-unit { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--tan); margin: 6px 0 14px; }
+    body.lang-ar .loc-unit { letter-spacing: 0; }
+    .loc-name { font-size: 14px; color: var(--mid); line-height: 1.4; }
+
+    /* ── TWO IMAGE GRID ──────────────────────────── */
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .img-pair img { width: 100%; height: clamp(240px, 35vw, 500px); object-fit: cover; display: block; }
+
+    /* ── AMENITIES ───────────────────────────────── */
+    .amenities { padding: clamp(80px, 12vh, 120px) 0; }
+    .amen-header { margin-bottom: 52px; }
+    .amen-heading { font-size: clamp(28px, 3.5vw, 48px); font-weight: 200; color: var(--dark); margin-top: 10px; }
+    .amen-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .amen-item {
+      display: flex; align-items: center; gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(34,31,26,.08);
+    }
+    .amen-item:nth-last-child(-n+2) { border-bottom: none; }
+    .amen-num { font-size: 11px; letter-spacing: .2em; color: var(--tan); font-weight: 400; min-width: 24px; }
+    body.lang-ar .amen-num { letter-spacing: 0; }
+    .amen-name { font-size: 16px; font-weight: 300; color: var(--dark); }
+
+    /* ── CTA SECTION ─────────────────────────────── */
+    .cta-section { padding: clamp(80px, 14vh, 140px) 0; text-align: center; }
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 200;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      font-size: 17px;
+      color: var(--mid);
+      margin-bottom: 44px;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.8;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-family: '29LT Azer', sans-serif;
+      font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+      padding: 18px 56px;
+      border: 1px solid rgba(34,31,26,.25);
+      color: var(--dark);
+      text-decoration: none;
+      transition: all .3s;
+    }
+    body.lang-ar .cta-btn { letter-spacing: 0; font-size: 13px; }
+    .cta-btn:hover { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 72px 0 32px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+    .foot-logo-wrap { overflow: hidden; height: 80px; }
+    .foot-logo-img { height: 80px; width: auto; display: block; }
     body.lang-ar .foot-logo-img.logo-img-en { display: none; }
     body.lang-ar .foot-logo-img.logo-img-ar { display: block; }
     .foot-logo-img.logo-img-ar { display: none; }
-    .foot-brand p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,.32); margin-top: 20px; max-width: 280px; }
-    .foot-tagline { font-size: 17px; font-style: italic; color: var(--tan); margin-top: 18px; }
-    .foot-col h4 { font-size: 13px; letter-spacing: .24em; text-transform: uppercase; color: var(--tan); margin-bottom: 20px; }
+    .foot-brand p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,.28); margin-top: 20px; max-width: 280px; }
+    .foot-col h4 { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--tan); margin-bottom: 20px; }
     .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .foot-col ul li a { font-size: 16px; color: rgba(255,255,255,.35); transition: color .25s; text-decoration: none; }
-    .foot-col ul li a:hover { color: var(--white); }
+    .foot-col ul li a { font-size: 15px; color: rgba(255,255,255,.32); transition: color .25s; text-decoration: none; }
+    .foot-col ul li a:hover { color: #fff; }
     .soc-row { display: flex; gap: 10px; margin-top: 22px; }
     .soc { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.32); transition: all .25s; text-decoration: none; }
     .soc:hover { border-color: var(--tan); color: var(--tan); }
     .soc svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
     .foot-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .foot-bottom p { font-size: 14px; color: rgba(255,255,255,.22); }
+    .foot-bottom p { font-size: 13px; color: rgba(255,255,255,.2); }
 
-    /* ── REVEAL ───────────────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    /* ── REVEAL ──────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
 
-    /* ── RESPONSIVE ───────────────────────────────────────── */
+    /* ── RESPONSIVE ──────────────────────────────── */
     @media (max-width: 1024px) {
-      .overview-grid { grid-template-columns: 1fr; gap: 48px; }
-      .loc-grid { grid-template-columns: repeat(3, 1fr); }
-      .amen-grid { grid-template-columns: repeat(2, 1fr); }
+      .intro-grid { grid-template-columns: 1fr; gap: 36px; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
-      .market-grid { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
       .nav-links, .nav-end { display: none; }
       .hamburger { display: flex; }
-      .proj-hero { min-height: 90vh; padding-bottom: 56px; }
-      .hero-ctas { gap: 10px; }
-      .btn-primary, .btn-outline { padding: 14px 24px; font-size: 12px; }
-      .hs-item { min-width: 100px; padding: 0 20px 0 0; }
-      body.lang-ar .hs-item { padding: 0 0 0 20px; }
-      .units-grid { grid-template-columns: 1fr; }
-      .loc-grid { grid-template-columns: repeat(2, 1fr); }
-      .pay-grid { grid-template-columns: 1fr; }
-      .steps-row { flex-direction: column; }
-      .foot-grid { grid-template-columns: 1fr; gap: 32px; }
-      .foot-bottom { flex-direction: column; align-items: flex-start; }
-      .foot-brand { align-items: center; display: flex; flex-direction: column; text-align: center; }
+      .amen-list { grid-template-columns: 1fr; }
+      .amen-item:nth-last-child(-n+2) { border-bottom: 1px solid rgba(34,31,26,.08); }
+      .amen-item:last-child { border-bottom: none; }
+      .location-grid { grid-template-columns: repeat(2, 1fr); }
+      .img-pair { grid-template-columns: 1fr; }
+      .img-pair img { height: 260px; }
+      .suite-arrow { display: none; }
     }
-    @media (max-width: 480px) {
-      .loc-grid { grid-template-columns: 1fr 1fr; }
-      .amen-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 540px) {
+      .location-grid { grid-template-columns: 1fr 1fr; }
+      .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+      .stats-row { flex-wrap: wrap; gap: 24px; }
+      .stat { border: none; padding: 0; }
     }
   </style>
 </head>
 <body class="lang-ar" id="body-root">
 
-<!-- ════════════════════════════════════ NAV ════════════════════════════════════ -->
+<!-- ══════════════ NAV ══════════════ -->
 <nav id="navbar" class="scrolled">
   <div class="container nav-inner">
     <a href="/" class="logo" aria-label="Resal">
       <img src="logo-en.png" class="logo-img logo-img-en" alt="Resal" />
       <img src="logo-ar.png" class="logo-img logo-img-ar" alt="رسال" />
     </a>
-
     <ul class="nav-links">
       <li><a href="/#about"><span class="t-en">About</span><span class="t-ar">من نحن</span></a></li>
-      <li><a href="/#ourway"><span class="t-en">Our Way</span><span class="t-ar">طريقتنا</span></a></li>
       <li><a href="/#services"><span class="t-en">Services</span><span class="t-ar">الخدمات</span></a></li>
       <li><a href="/#projects"><span class="t-en">Projects</span><span class="t-ar">المشاريع</span></a></li>
       <li><a href="/team"><span class="t-en">The Team</span><span class="t-ar">الفريق</span></a></li>
     </ul>
-
     <div class="nav-end">
       <button class="lang-btn" id="langToggle" aria-label="Switch language">
         <span class="t-en">عربي</span><span class="t-ar">English</span>
@@ -527,8 +403,7 @@
         <span class="t-en">Contact Us</span><span class="t-ar">تواصل معنا</span>
       </a>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobMenu">
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -537,7 +412,6 @@
 <!-- Mobile Menu -->
 <div class="mob-menu" id="mobMenu" role="dialog" aria-modal="true">
   <a href="/#about" class="ml"><span class="t-en">About</span><span class="t-ar">من نحن</span></a>
-  <a href="/#ourway" class="ml"><span class="t-en">Our Way</span><span class="t-ar">طريقتنا</span></a>
   <a href="/#services" class="ml"><span class="t-en">Services</span><span class="t-ar">الخدمات</span></a>
   <a href="/#projects" class="ml"><span class="t-en">Projects</span><span class="t-ar">المشاريع</span></a>
   <a href="/team" class="ml"><span class="t-en">The Team</span><span class="t-ar">الفريق</span></a>
@@ -547,426 +421,248 @@
   </button>
 </div>
 
-<!-- ════════════════════════════════════ HERO ════════════════════════════════════ -->
-<section class="proj-hero">
-  <div class="proj-hero-bg"></div>
-  <div class="proj-hero-gradient"></div>
-  <div class="container proj-hero-inner">
-    <div class="reveal">
-      <div class="proj-badge">
-        <div class="proj-badge-dot"></div>
-        <span><span class="t-en">Al Madinah Al Munawwarah</span><span class="t-ar">المدينة المنورة · حي الإسكان</span></span>
-      </div>
-      <h1 class="proj-hero-title">
-        <span class="t-en-block">Radisson Suites<br><em>Madinah</em></span>
-        <span class="t-ar-block">راديسون سويتس<br><em>المدينة المنورة</em></span>
-      </h1>
-      <p class="proj-hero-sub">
-        <span class="t-en">Radisson Suites &amp; Apts Madinah</span>
-        <span class="t-ar">Radisson Suites &amp; Apts Madinah</span>
-      </p>
-      <div class="hero-ctas">
-        <a href="/#contact" class="btn-primary">
-          <span class="t-en">Register Interest</span><span class="t-ar">سجّل اهتمامك</span>
-        </a>
-        <a href="#units" class="btn-outline">
-          <span class="t-en">View Units &amp; Pricing</span><span class="t-ar">الوحدات والأسعار</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-stats reveal">
-      <div class="hs-item">
-        <div class="hs-num">180</div>
-        <div class="hs-label"><span class="t-en">Hotel Suites</span><span class="t-ar">جناحًا فندقيًا</span></div>
-      </div>
-      <div class="hs-item">
-        <div class="hs-num">4 <span><span class="t-en">min</span><span class="t-ar">دق</span></span></div>
-        <div class="hs-label"><span class="t-en">Prophet's Mosque</span><span class="t-ar">المسجد النبوي</span></div>
-      </div>
-      <div class="hs-item">
-        <div class="hs-num">9</div>
-        <div class="hs-label"><span class="t-en">Residential Floors</span><span class="t-ar">أدوار سكنية</span></div>
-      </div>
-      <div class="hs-item">
-        <div class="hs-num">10<span>%+</span></div>
-        <div class="hs-label"><span class="t-en">Expected Annual Yield</span><span class="t-ar">عائد سنوي متوقع</span></div>
-      </div>
-      <div class="hs-item">
-        <div class="hs-num">Jan <span>2027</span></div>
-        <div class="hs-label"><span class="t-en">Delivery</span><span class="t-ar">التسليم</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ OVERVIEW ════════════════════════════════════ -->
-<section class="overview" id="overview">
-  <div class="container">
-    <div class="overview-grid">
-      <div class="overview-text reveal">
-        <p class="eyebrow"><span class="t-en">The Project</span><span class="t-ar">المشروع</span></p>
-        <h2>
-          <span class="t-en-block">A world-class hotel address<br>near the <em>Prophet's Mosque</em></span>
-          <span class="t-ar-block">عنوان فندقي بعلامة عالمية<br>قرب <em>المسجد النبوي</em></span>
-        </h2>
-        <p>
-          <span class="t-en">Hotel suites and apartments in Al Madinah Al Munawwarah, 4 minutes by car from Al-Masjid Al-Nabawi. Operated under the Radisson brand — fully furnished, fully managed, generating income from day one.</span>
-          <span class="t-ar">أجنحة وشقق فندقية في المدينة المنورة على بُعد 4 دقائق بالسيارة من المسجد النبوي الشريف. تحمل علامة راديسون — مؤثَّثة بالكامل، تُدار بالكامل، وتدر دخلاً من يوم الافتتاح.</span>
-        </p>
-        <div class="overview-box">
-          <p>
-            <span class="t-en"><strong>Developer:</strong> Resal Real Estate Development &nbsp;·&nbsp; <strong>Operator:</strong> Radisson &nbsp;·&nbsp; <strong>Designer:</strong> BFS Engineering (Badr Al-Sudairi)</span>
-            <span class="t-ar"><strong>المطوّر:</strong> شركة رسال للتطوير العقاري &nbsp;·&nbsp; <strong>المشغّل:</strong> راديسون &nbsp;·&nbsp; <strong>المصمم:</strong> مكتب بدر فهد السديري (BFS)</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="overview-facts reveal d1">
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Location</span><span class="t-ar">الموقع</span></span>
-          <span class="of-val"><span class="t-en">Al Iskan, King Abdulaziz Rd, Madinah</span><span class="t-ar">حي الإسكان · طريق الملك عبدالعزيز</span></span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Total Units</span><span class="t-ar">إجمالي الوحدات</span></span>
-          <span class="of-val">180</span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Floors</span><span class="t-ar">الأدوار</span></span>
-          <span class="of-val">9 + <span class="t-en">Ground</span><span class="t-ar">أرضي</span></span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Height</span><span class="t-ar">الارتفاع</span></span>
-          <span class="of-val">39.6 m</span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Land Area</span><span class="t-ar">مساحة الأرض</span></span>
-          <span class="of-val">3,104 m²</span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Parking</span><span class="t-ar">المواقف</span></span>
-          <span class="of-val">74</span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Ownership</span><span class="t-ar">نوع الملكية</span></span>
-          <span class="of-val"><span class="t-en">Freehold Title Deed</span><span class="t-ar">صك ملكية حر</span></span>
-        </div>
-        <div class="of-row">
-          <span class="of-label"><span class="t-en">Delivery</span><span class="t-ar">التسليم</span></span>
-          <span class="of-val"><span class="t-en">January 2027</span><span class="t-ar">يناير 2027</span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ LOCATION ════════════════════════════════════ -->
-<section class="location" id="location">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="eyebrow"><span class="t-en">Location</span><span class="t-ar">الموقع</span></p>
-      <h2>
-        <span class="t-en-block">Everything a visitor needs<br><em>in minutes</em></span>
-        <span class="t-ar-block">كل ما يقصده الزائر<br><em>في دقائق</em></span>
-      </h2>
-    </div>
-    <div class="loc-grid">
-      <div class="loc-card reveal">
-        <div class="loc-num">4</div>
-        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
-        <div class="loc-name"><span class="t-en">Al-Masjid Al-Nabawi</span><span class="t-ar">المسجد النبوي الشريف</span></div>
-      </div>
-      <div class="loc-card reveal d1">
-        <div class="loc-num">9</div>
-        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
-        <div class="loc-name"><span class="t-en">Haramain Railway Station</span><span class="t-ar">محطة قطار الحرمين</span></div>
-      </div>
-      <div class="loc-card reveal d2">
-        <div class="loc-num">10</div>
-        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
-        <div class="loc-name"><span class="t-en">Masjid Quba</span><span class="t-ar">مسجد قباء</span></div>
-      </div>
-      <div class="loc-card reveal d3">
-        <div class="loc-num">14</div>
-        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقيقة</span></div>
-        <div class="loc-name"><span class="t-en">Prince Muhammad Int'l Airport</span><span class="t-ar">مطار الأمير محمد الدولي</span></div>
-      </div>
-      <div class="loc-card reveal d4">
-        <div class="loc-num">20</div>
-        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقيقة</span></div>
-        <div class="loc-name"><span class="t-en">Jabal Uhud &amp; Martyrs' Mosque</span><span class="t-ar">جبل أحد ومسجد الشهداء</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ UNITS ════════════════════════════════════ -->
-<section class="units" id="units">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="eyebrow"><span class="t-en">Units &amp; Pricing</span><span class="t-ar">الوحدات والأسعار</span></p>
-      <h2 style="color:var(--dark)">
-        <span class="t-en-block">Three suite <em style="color:var(--brown)">categories</em></span>
-        <span class="t-ar-block">ثلاث فئات <em style="color:var(--brown)">من الأجنحة</em></span>
-      </h2>
-      <p style="font-size:15px;color:rgba(62,58,54,.45);margin-top:12px;">
-        <span class="t-en">All suites are fully furnished. Price: 16,500 SAR/m² — unified across all categories.</span>
-        <span class="t-ar">جميع الأجنحة مؤثَّثة بالكامل. سعر المتر: 16,500 ريال — موحَّد لجميع الفئات.</span>
-      </p>
-    </div>
-
-    <div class="units-grid">
-
-      <!-- Junior -->
-      <div class="unit-card reveal">
-        <div class="unit-top">
-          <div class="unit-type">Junior Suite</div>
-          <div class="unit-name"><span class="t-en">Junior Suite</span><span class="t-ar">جناح جونيور</span></div>
-          <div class="unit-area">60 – 66 m² &nbsp;·&nbsp; <span class="t-en">1 Bedroom</span><span class="t-ar">غرفة نوم</span></div>
-        </div>
-        <div class="unit-divider"></div>
-        <div class="unit-bottom">
-          <div class="unit-price-label"><span class="t-en">Starting From</span><span class="t-ar">يبدأ من</span></div>
-          <div class="unit-price">990,000 <span style="font-size:.6em;color:var(--tan)"><span class="t-en">SAR</span><span class="t-ar">ريال</span></span></div>
-          <div class="unit-price-sub"><span class="t-en">Up to 1,089,000 SAR</span><span class="t-ar">حتى 1,089,000 ريال</span></div>
-          <div class="unit-specs">
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Count</span><span class="t-ar">العدد</span></span>
-              <span class="unit-spec-v">117 <span class="t-en">units</span><span class="t-ar">وحدة</span></span>
-            </div>
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Per floor</span><span class="t-ar">في كل دور</span></span>
-              <span class="unit-spec-v">13</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Presidential — featured -->
-      <div class="unit-card featured reveal d1">
-        <div class="unit-top">
-          <div class="unit-type" style="color:rgba(174,149,115,.8)">Presidential Suite</div>
-          <div class="unit-name"><span class="t-en">Presidential Suite</span><span class="t-ar">جناح رئاسي</span></div>
-          <div class="unit-area">71 – 89.9 m² &nbsp;·&nbsp; <span class="t-en">2 Bedrooms</span><span class="t-ar">غرفتا نوم</span></div>
-        </div>
-        <div class="unit-divider"></div>
-        <div class="unit-bottom">
-          <div class="unit-price-label"><span class="t-en">Starting From</span><span class="t-ar">يبدأ من</span></div>
-          <div class="unit-price">1,171,500 <span style="font-size:.6em;color:var(--tan)"><span class="t-en">SAR</span><span class="t-ar">ريال</span></span></div>
-          <div class="unit-price-sub"><span class="t-en">Up to 1,483,350 SAR</span><span class="t-ar">حتى 1,483,350 ريال</span></div>
-          <div class="unit-specs">
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Count</span><span class="t-ar">العدد</span></span>
-              <span class="unit-spec-v">45 <span class="t-en">units</span><span class="t-ar">وحدة</span></span>
-            </div>
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Per floor</span><span class="t-ar">في كل دور</span></span>
-              <span class="unit-spec-v">5</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Royal -->
-      <div class="unit-card reveal d2">
-        <div class="unit-top">
-          <div class="unit-type">Royal Suite</div>
-          <div class="unit-name"><span class="t-en">Royal Suite</span><span class="t-ar">جناح ملكي</span></div>
-          <div class="unit-area">116 – 132 m² &nbsp;·&nbsp; <span class="t-en">3 Bedrooms</span><span class="t-ar">ثلاث غرف</span></div>
-        </div>
-        <div class="unit-divider"></div>
-        <div class="unit-bottom">
-          <div class="unit-price-label"><span class="t-en">Starting From</span><span class="t-ar">يبدأ من</span></div>
-          <div class="unit-price">1,916,475 <span style="font-size:.6em;color:var(--tan)"><span class="t-en">SAR</span><span class="t-ar">ريال</span></span></div>
-          <div class="unit-price-sub"><span class="t-en">Up to 2,182,950 SAR</span><span class="t-ar">حتى 2,182,950 ريال</span></div>
-          <div class="unit-specs">
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Count</span><span class="t-ar">العدد</span></span>
-              <span class="unit-spec-v">18 <span class="t-en">units</span><span class="t-ar">وحدة</span></span>
-            </div>
-            <div class="unit-spec">
-              <span class="unit-spec-k"><span class="t-en">Per floor</span><span class="t-ar">في كل دور</span></span>
-              <span class="unit-spec-v">2</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ MARKET ════════════════════════════════════ -->
-<section class="market" id="market">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="eyebrow"><span class="t-en">Why Invest</span><span class="t-ar">لماذا تستثمر</span></p>
-      <h2>
-        <span class="t-en-block">A market that never <em>sleeps</em></span>
-        <span class="t-ar-block">سوق لا <em>يتوقف</em></span>
-      </h2>
-    </div>
-    <div class="market-grid">
-      <div class="mkt-card reveal">
-        <div class="mkt-num">82<sup>%</sup></div>
-        <div class="mkt-title"><span class="t-en">Hotel Occupancy — Q1 2026</span><span class="t-ar">إشغال فندقي — الربع الأول 2026</span></div>
-        <div class="mkt-desc"><span class="t-en">The highest of all cities in the Kingdom, according to the Ministry of Tourism.</span><span class="t-ar">الأعلى بين مدن المملكة، وفق وزارة السياحة.</span></div>
-      </div>
-      <div class="mkt-card reveal d1">
-        <div class="mkt-num">21<sup>M+</sup></div>
-        <div class="mkt-title"><span class="t-en">Annual Visitors — 2025</span><span class="t-ar">زوار سنوياً — 2025</span></div>
-        <div class="mkt-desc"><span class="t-en">Al Madinah receives over 21 million visitors annually — a figure rising toward Vision 2030's target of 30 million Umrah pilgrims.</span><span class="t-ar">المدينة المنورة تستقبل أكثر من 21 مليون زائر سنوياً، في مسار نحو استهداف رؤية 2030 بـ30 مليون معتمر.</span></div>
-      </div>
-      <div class="mkt-card reveal">
-        <div class="mkt-num">787</div>
-        <div class="mkt-title"><span class="t-en">Average Daily Rate (SAR) — 2024</span><span class="t-ar">متوسط سعر الليلة (ريال) — 2024</span></div>
-        <div class="mkt-desc"><span class="t-en">Average nightly rate for hotels in Madinah, with 80–90% occupancy during Ramadan and Hajj season.</span><span class="t-ar">متوسط سعر الليلة في فنادق المدينة، مع إشغال 80-90% في رمضان والحج.</span></div>
-      </div>
-      <div class="mkt-card reveal d1">
-        <div class="mkt-num">10<sup>%+</sup></div>
-        <div class="mkt-title"><span class="t-en">Expected Annual Yield</span><span class="t-ar">العائد السنوي المتوقع</span></div>
-        <div class="mkt-desc"><span class="t-en">Average expected return of over 10% annually per suite from net hotel revenue, after Radisson's operating fees. Income distributed quarterly.</span><span class="t-ar">عائد سنوي متوقع أعلى من 10% للجناح من صافي دخل الفندق بعد رسوم راديسون. يُصرف كل ثلاثة أشهر.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ AMENITIES ════════════════════════════════════ -->
-<section class="amenities" id="amenities">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="eyebrow"><span class="t-en">Hotel Services</span><span class="t-ar">خدمات الفندق</span></p>
-      <h2 style="color:var(--dark)">
-        <span class="t-en-block">Full hotel <em style="color:var(--brown)">experience</em></span>
-        <span class="t-ar-block">تجربة فندقية <em style="color:var(--brown)">متكاملة</em></span>
-      </h2>
-    </div>
-    <div class="amen-grid">
-      <div class="amen-card reveal">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">Hotel Lobby</span><span class="t-ar">لوبي واستقبال</span></div>
-        <div class="amen-desc"><span class="t-en">Full hotel lobby &amp; reception with 24/7 service</span><span class="t-ar">لوبي واستقبال فندقي متكامل، خدمة على مدار الساعة</span></div>
-      </div>
-      <div class="amen-card reveal d1">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">Restaurant</span><span class="t-ar">مطعم</span></div>
-        <div class="amen-desc"><span class="t-en">Full-service restaurant with a complete kitchen</span><span class="t-ar">مطعم ومطبخ متكامل بمستوى فندقي</span></div>
-      </div>
-      <div class="amen-card reveal d2">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">Health Club</span><span class="t-ar">نادٍ صحي</span></div>
-        <div class="amen-desc"><span class="t-en">Fully equipped health club &amp; gym</span><span class="t-ar">نادٍ صحي وصالة رياضية متكاملة</span></div>
-      </div>
-      <div class="amen-card reveal d3">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16,8 20,8 23,11 23,16 16,16"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">Hotel Transport</span><span class="t-ar">نقل منظّم</span></div>
-        <div class="amen-desc"><span class="t-en">Scheduled hotel transport to the Haram</span><span class="t-ar">نقل فندقي منظّم إلى الحرم</span></div>
-      </div>
-      <div class="amen-card reveal">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><rect x="9" y="12" width="6" height="10"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">3 Retail Shops</span><span class="t-ar">3 محلات تجارية</span></div>
-        <div class="amen-desc"><span class="t-en">Street-facing retail arcade at ground level</span><span class="t-ar">محلات على الشارع في الدور الأرضي</span></div>
-      </div>
-      <div class="amen-card reveal d1">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">Open Courtyard</span><span class="t-ar">فناء داخلي</span></div>
-        <div class="amen-desc"><span class="t-en">Private open interior courtyard for guests</span><span class="t-ar">فناء داخلي مفتوح يمنح المشروع هدوءًا خاصًا</span></div>
-      </div>
-      <div class="amen-card reveal d2">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="1"/><path d="M6 6V4a2 2 0 0 1 4 0v2"/><path d="M14 6V4a2 2 0 0 1 4 0v2"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">74 Parking Spaces</span><span class="t-ar">74 موقف سيارة</span></div>
-        <div class="amen-desc"><span class="t-en">Ground-level and basement parking for guests</span><span class="t-ar">مواقف في الأرضي والقبو لزوار الفندق</span></div>
-      </div>
-      <div class="amen-card reveal d3">
-        <div class="amen-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="amen-title"><span class="t-en">14 Free Nights</span><span class="t-ar">14 ليلة مجانية</span></div>
-        <div class="amen-desc"><span class="t-en">Each owner receives 14 complimentary nights per year in their suite</span><span class="t-ar">كل مالك يحصل على 14 ليلة مجانية سنوياً في جناحه</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ PAYMENT ════════════════════════════════════ -->
-<section class="payment" id="payment">
-  <div class="container">
-    <div class="section-header reveal">
-      <p class="eyebrow"><span class="t-en">Ownership &amp; Payment</span><span class="t-ar">الملكية والسداد</span></p>
-      <h2>
-        <span class="t-en-block">Secure, staged <em>payments</em></span>
-        <span class="t-ar-block">سداد مرحلي <em>آمن</em></span>
-      </h2>
-    </div>
-
-    <div class="pay-grid">
-      <div class="pay-card reveal">
-        <div class="pay-num">5<span style="font-size:.5em;color:rgba(174,149,115,.6)">%</span></div>
-        <div class="pay-title"><span class="t-en">Maximum Booking Deposit</span><span class="t-ar">حد أقصى لمبلغ الحجز</span></div>
-        <div class="pay-desc"><span class="t-en">Reserve your suite with a maximum of 5% of the price. No cash accepted — all payments go directly into a WAFI (escrow) account in the buyer's name.</span><span class="t-ar">احجز جناحك بحد أقصى 5% من السعر. لا يُقبل أي نقد — جميع الدفعات تُحوَّل مباشرةً إلى حساب ضمان وافي باسم المشتري.</span></div>
-      </div>
-      <div class="pay-card reveal d1">
-        <div class="pay-num">36</div>
-        <div class="pay-title"><span class="t-en">Months Construction Period</span><span class="t-ar">شهراً مدة التنفيذ</span></div>
-        <div class="pay-desc"><span class="t-en">Payments are linked to certified engineering milestones. If delivery is delayed beyond one year, you receive equivalent rent compensation per month — or full contract termination and refund.</span><span class="t-ar">الدفعات مرتبطة بمراحل الإنجاز الهندسية المعتمدة. إذا تأخر التسليم أكثر من سنة، تحصل على تعويض إيجاري شهري أو فسخ العقد واسترداد جميع المدفوعات.</span></div>
-      </div>
-    </div>
-
-    <div class="pay-steps reveal">
-      <h3><span class="t-en">Payment Milestones</span><span class="t-ar">مراحل السداد</span></h3>
-      <div class="steps-row">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title"><span class="t-en">Contract Signing</span><span class="t-ar">دفعة التعاقد</span></div>
-          <div class="step-desc"><span class="t-en">Paid upon signing — booking deposit is deducted from this payment.</span><span class="t-ar">عند توقيع العقد — يُحسم منها مبلغ الحجز.</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title"><span class="t-en">Construction Milestones</span><span class="t-ar">دفعات الإنشاء</span></div>
-          <div class="step-desc"><span class="t-en">Paid as the project reaches engineering milestones certified by the consultant.</span><span class="t-ar">عند بلوغ مراحل الإنجاز المعتمدة من المستشار الهندسي.</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title"><span class="t-en">Final Payment</span><span class="t-ar">الدفعة الأخيرة</span></div>
-          <div class="step-desc"><span class="t-en">Before the confirmed delivery date — upon handover notification.</span><span class="t-ar">قبل موعد التسليم المحدد — عند إخطار الجاهزية.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ CTA ════════════════════════════════════ -->
-<section class="cta-band">
-  <div class="container cta-inner reveal">
-    <h2>
-      <span class="t-en-block">Ready to invest in<br>Al Madinah?</span>
-      <span class="t-ar-block">مستعد للاستثمار<br>في المدينة المنورة؟</span>
-    </h2>
-    <p>
-      <span class="t-en">Register your interest and our team will reach out with the full unit schedule and payment plan.</span>
-      <span class="t-ar">سجّل اهتمامك وسيتواصل معك فريقنا بجدول الوحدات الكامل وخطة السداد.</span>
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <img
+    src="radisson-images/hero-golden.jpg"
+    alt="Radisson Suites Madinah"
+    class="hero-img"
+    fetchpriority="high"
+  />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">
+      <span class="t-en">Al Madinah Al Munawwarah · Al Iskan</span>
+      <span class="t-ar">المدينة المنورة · حي الإسكان</span>
     </p>
-    <a href="/#contact" class="btn-white">
-      <span class="t-en">Register Interest</span><span class="t-ar">سجّل اهتمامك</span>
+    <h1 class="hero-title">
+      <span class="t-en-block">Radisson<br><em>Suites</em></span>
+      <span class="t-ar-block">راديسون<br><em>سويتس</em></span>
+    </h1>
+    <a href="/#contact" class="hero-cta">
+      <span class="t-en">Register Interest</span>
+      <span class="t-ar">سجّل اهتمامك</span>
     </a>
   </div>
 </section>
 
-<!-- ════════════════════════════════════ FOOTER ════════════════════════════════════ -->
+<!-- ══════════════ INTRO ══════════════ -->
+<section class="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="reveal">
+        <span class="label">
+          <span class="t-en">The Project</span>
+          <span class="t-ar">المشروع</span>
+        </span>
+        <h2 class="intro-heading">
+          <span class="t-en-block">A world brand.<br>Steps from the <em>Haram.</em></span>
+          <span class="t-ar-block">علامة عالمية.<br>على خطوات من <em>الحرم.</em></span>
+        </h2>
+      </div>
+      <div class="reveal d1">
+        <p class="intro-text">
+          <span class="t-en">Hotel suites and apartments in Al Madinah Al Munawwarah, operated under the Radisson brand. Fully furnished, fully managed — available for ownership with a freehold title deed.</span>
+          <span class="t-ar">أجنحة وشقق فندقية في المدينة المنورة تحت إدارة علامة راديسون العالمية. مؤثَّثة بالكامل، تُدار بالكامل — متاحة للتملك بصك حر.</span>
+        </p>
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-num">180</div>
+            <div class="stat-label"><span class="t-en">Hotel Suites</span><span class="t-ar">جناح فندقي</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4<span style="font-size:.5em;color:var(--tan)"> <span class="t-en">min</span><span class="t-ar">دق</span></span></div>
+            <div class="stat-label"><span class="t-en">Prophet's Mosque</span><span class="t-ar">المسجد النبوي</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">9</div>
+            <div class="stat-label"><span class="t-en">Residential Floors</span><span class="t-ar">أدوار سكنية</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FULL IMAGE 1 ══════════════ -->
+<div class="full-img tall">
+  <img src="radisson-images/entrance-arches.jpg" alt="Entrance" loading="lazy" />
+</div>
+
+<!-- ══════════════ SUITES ══════════════ -->
+<section class="suites">
+  <div class="container">
+    <div class="suites-header reveal">
+      <span class="label">
+        <span class="t-en">The Suites</span>
+        <span class="t-ar">الأجنحة</span>
+      </span>
+      <h2 class="suites-heading">
+        <span class="t-en-block">Three suite categories</span>
+        <span class="t-ar-block">ثلاث فئات من الأجنحة</span>
+      </h2>
+    </div>
+    <div class="suites-grid">
+      <div class="suite-row reveal">
+        <div>
+          <div class="suite-type">Junior Suite</div>
+          <div class="suite-name"><span class="t-en">Junior Suite</span><span class="t-ar">جناح جونيور</span></div>
+        </div>
+        <div class="suite-right">
+          <div class="suite-area">60–66 <span class="suite-area-unit">m²</span></div>
+          <div class="suite-beds"><span class="t-en">1 Bedroom</span><span class="t-ar">غرفة نوم</span></div>
+        </div>
+        <div class="suite-arrow">→</div>
+      </div>
+      <div class="suite-row reveal d1">
+        <div>
+          <div class="suite-type">Presidential Suite</div>
+          <div class="suite-name"><span class="t-en">Presidential Suite</span><span class="t-ar">جناح رئاسي</span></div>
+        </div>
+        <div class="suite-right">
+          <div class="suite-area">71–90 <span class="suite-area-unit">m²</span></div>
+          <div class="suite-beds"><span class="t-en">2 Bedrooms</span><span class="t-ar">غرفتا نوم</span></div>
+        </div>
+        <div class="suite-arrow">→</div>
+      </div>
+      <div class="suite-row reveal d2">
+        <div>
+          <div class="suite-type">Royal Suite</div>
+          <div class="suite-name"><span class="t-en">Royal Suite</span><span class="t-ar">جناح ملكي</span></div>
+        </div>
+        <div class="suite-right">
+          <div class="suite-area">116–132 <span class="suite-area-unit">m²</span></div>
+          <div class="suite-beds"><span class="t-en">3 Bedrooms</span><span class="t-ar">ثلاث غرف</span></div>
+        </div>
+        <div class="suite-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ LOCATION ══════════════ -->
+<section class="location">
+  <div class="container">
+    <div class="location-header reveal">
+      <span class="label">
+        <span class="t-en">Location</span>
+        <span class="t-ar">الموقع</span>
+      </span>
+      <h2 class="loc-heading">
+        <span class="t-en-block">Everything within minutes</span>
+        <span class="t-ar-block">كل شيء في دقائق</span>
+      </h2>
+    </div>
+    <div class="location-grid">
+      <div class="loc-item reveal">
+        <div class="loc-num">4</div>
+        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
+        <div class="loc-name"><span class="t-en">Al-Masjid Al-Nabawi</span><span class="t-ar">المسجد النبوي الشريف</span></div>
+      </div>
+      <div class="loc-item reveal d1">
+        <div class="loc-num">9</div>
+        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
+        <div class="loc-name"><span class="t-en">Haramain Railway</span><span class="t-ar">قطار الحرمين</span></div>
+      </div>
+      <div class="loc-item reveal d2">
+        <div class="loc-num">10</div>
+        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقائق</span></div>
+        <div class="loc-name"><span class="t-en">Masjid Quba</span><span class="t-ar">مسجد قباء</span></div>
+      </div>
+      <div class="loc-item reveal d3">
+        <div class="loc-num">14</div>
+        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقيقة</span></div>
+        <div class="loc-name"><span class="t-en">Int'l Airport</span><span class="t-ar">المطار الدولي</span></div>
+      </div>
+      <div class="loc-item reveal d4">
+        <div class="loc-num">20</div>
+        <div class="loc-unit"><span class="t-en">Minutes</span><span class="t-ar">دقيقة</span></div>
+        <div class="loc-name"><span class="t-en">Jabal Uhud</span><span class="t-ar">جبل أحد</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ IMAGE PAIR ══════════════ -->
+<div class="img-pair">
+  <img src="radisson-images/courtyard-1.jpg" alt="Courtyard golden hour" loading="lazy" />
+  <img src="radisson-images/arches-night.jpg" alt="Entrance at night" loading="lazy" />
+</div>
+
+<!-- ══════════════ AMENITIES ══════════════ -->
+<section class="amenities">
+  <div class="container">
+    <div class="amen-header reveal">
+      <span class="label">
+        <span class="t-en">Hotel Services</span>
+        <span class="t-ar">خدمات الفندق</span>
+      </span>
+      <h2 class="amen-heading">
+        <span class="t-en-block">Full hotel experience</span>
+        <span class="t-ar-block">تجربة فندقية متكاملة</span>
+      </h2>
+    </div>
+    <div class="amen-list reveal d1">
+      <div class="amen-item">
+        <span class="amen-num">01</span>
+        <span class="amen-name"><span class="t-en">Hotel Lobby & 24/7 Reception</span><span class="t-ar">لوبي واستقبال على مدار الساعة</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">05</span>
+        <span class="amen-name"><span class="t-en">Open Interior Courtyard</span><span class="t-ar">فناء داخلي مفتوح</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">02</span>
+        <span class="amen-name"><span class="t-en">Restaurant & Full Kitchen</span><span class="t-ar">مطعم ومطبخ متكامل</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">06</span>
+        <span class="amen-name"><span class="t-en">Retail Spaces at Ground Level</span><span class="t-ar">محلات تجارية بالدور الأرضي</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">03</span>
+        <span class="amen-name"><span class="t-en">Health Club & Gym</span><span class="t-ar">نادٍ صحي وصالة رياضية</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">07</span>
+        <span class="amen-name"><span class="t-en">Scheduled Transport to Haram</span><span class="t-ar">نقل منظّم إلى الحرم</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">04</span>
+        <span class="amen-name"><span class="t-en">Freehold Ownership — Title Deed</span><span class="t-ar">تملك حر بصك ملكية</span></span>
+      </div>
+      <div class="amen-item">
+        <span class="amen-num">08</span>
+        <span class="amen-name"><span class="t-en">14 Complimentary Nights per Year</span><span class="t-ar">14 ليلة مجانية سنوياً للمالك</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FULL IMAGE 2 ══════════════ -->
+<div class="full-img tall">
+  <img src="radisson-images/courtyard-2.jpg" alt="Interior courtyard" loading="lazy" />
+</div>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="cta-section reveal">
+  <div class="container">
+    <h2>
+      <span class="t-en-block">Interested in owning<br>a suite?</span>
+      <span class="t-ar-block">مهتم بامتلاك<br>جناح؟</span>
+    </h2>
+    <p>
+      <span class="t-en">Register your interest and our team will reach out with full details.</span>
+      <span class="t-ar">سجّل اهتمامك وسيتواصل معك فريقنا بجميع التفاصيل.</span>
+    </p>
+    <a href="/#contact" class="cta-btn">
+      <span class="t-en">Register Interest</span>
+      <span class="t-ar">سجّل اهتمامك</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -976,44 +672,34 @@
           <img src="logo-ar-dark.png" class="foot-logo-img logo-img-ar" alt="رسال" />
         </div>
         <p>
-          <span class="t-en">A strategic real estate development alliance in AlMadinah AlMunawwarah — integrating land, engineering, and capital to build communities that last.</span>
-          <span class="t-ar">تحالف استراتيجي للتطوير العقاري في المدينة المنورة — يجمع الأرض والهندسة ورأس المال لبناء مجتمعات دائمة.</span>
+          <span class="t-en">A strategic real estate development alliance in AlMadinah AlMunawwarah.</span>
+          <span class="t-ar">تحالف استراتيجي للتطوير العقاري في المدينة المنورة.</span>
         </p>
-        <div class="foot-tagline">
-          <span class="t-en">Integration Builds Trust</span>
-          <span class="t-ar">تكامل يبني الثقة</span>
-        </div>
       </div>
-
       <div class="foot-col">
         <h4><span class="t-en">Navigation</span><span class="t-ar">التنقل</span></h4>
         <ul>
-          <li><a href="/#about"><span class="t-en">About Resal</span><span class="t-ar">من نحن</span></a></li>
-          <li><a href="/#services"><span class="t-en">Services</span><span class="t-ar">الخدمات</span></a></li>
+          <li><a href="/#about"><span class="t-en">About</span><span class="t-ar">من نحن</span></a></li>
           <li><a href="/#projects"><span class="t-en">Projects</span><span class="t-ar">المشاريع</span></a></li>
           <li><a href="/team"><span class="t-en">The Team</span><span class="t-ar">الفريق</span></a></li>
-          <li><a href="/radisson"><span class="t-en">Radisson Suites</span><span class="t-ar">راديسون سويتس</span></a></li>
         </ul>
       </div>
-
       <div class="foot-col">
         <h4><span class="t-en">Project</span><span class="t-ar">المشروع</span></h4>
         <ul>
-          <li><a href="#overview"><span class="t-en">Overview</span><span class="t-ar">لمحة</span></a></li>
-          <li><a href="#units"><span class="t-en">Units &amp; Pricing</span><span class="t-ar">الوحدات والأسعار</span></a></li>
-          <li><a href="#market"><span class="t-en">Why Invest</span><span class="t-ar">لماذا تستثمر</span></a></li>
-          <li><a href="#payment"><span class="t-en">Payment Plan</span><span class="t-ar">خطة السداد</span></a></li>
+          <li><a href="#suites"><span class="t-en">The Suites</span><span class="t-ar">الأجنحة</span></a></li>
+          <li><a href="#location"><span class="t-en">Location</span><span class="t-ar">الموقع</span></a></li>
+          <li><a href="#amenities"><span class="t-en">Hotel Services</span><span class="t-ar">خدمات الفندق</span></a></li>
         </ul>
       </div>
-
       <div class="foot-col">
         <h4><span class="t-en">Contact</span><span class="t-ar">تواصل</span></h4>
         <ul>
           <li><a href="mailto:info@resalre.com">info@resalre.com</a></li>
-          <li><a href="#"><span class="t-en">AlMadinah AlMunawwarah</span><span class="t-ar">المدينة المنورة</span></a></li>
+          <li><a href="#"><span class="t-en">Al Madinah Al Munawwarah</span><span class="t-ar">المدينة المنورة</span></a></li>
         </ul>
         <div class="soc-row">
-          <a href="https://api.whatsapp.com/send/?phone=966575555859&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="soc" aria-label="WhatsApp">
+          <a href="https://api.whatsapp.com/send/?phone=966575555859" target="_blank" rel="noopener" class="soc" aria-label="WhatsApp">
             <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </a>
           <a href="https://www.instagram.com/resalre_sa" target="_blank" rel="noopener" class="soc" aria-label="Instagram">
@@ -1025,76 +711,62 @@
         </div>
       </div>
     </div>
-
     <div class="foot-bottom">
       <p><span class="t-en">© 2026 Resal Real Estate Development. All rights reserved.</span><span class="t-ar">© 2026 رسال للتطوير العقاري. جميع الحقوق محفوظة.</span></p>
-      <div></div>
     </div>
   </div>
 </footer>
 
 <script>
-  /* ── LANGUAGE ─────────────────────────────────────────── */
+  /* ── LANGUAGE ──────────────────────────────── */
   const html = document.getElementById('html-root');
   const body = document.getElementById('body-root');
-
   function setLang(lang) {
     if (lang === 'ar') {
       body.classList.remove('lang-en'); body.classList.add('lang-ar');
-      html.setAttribute('lang', 'ar'); html.setAttribute('dir', 'rtl');
-      document.title = 'راديسون سويتس المدينة المنورة — رسال للتطوير العقاري';
+      html.setAttribute('lang','ar'); html.setAttribute('dir','rtl');
     } else {
       body.classList.remove('lang-ar'); body.classList.add('lang-en');
-      html.setAttribute('lang', 'en'); html.setAttribute('dir', 'ltr');
-      document.title = 'Radisson Suites Madinah — Resal Real Estate';
+      html.setAttribute('lang','en'); html.setAttribute('dir','ltr');
     }
     localStorage.setItem('resal-lang', lang);
   }
-
-  function toggleLang() {
-    setLang(body.classList.contains('lang-ar') ? 'en' : 'ar');
-  }
-
+  function toggleLang() { setLang(body.classList.contains('lang-ar') ? 'en' : 'ar'); }
   document.getElementById('langToggle').addEventListener('click', toggleLang);
   document.getElementById('mobLang').addEventListener('click', toggleLang);
   const saved = localStorage.getItem('resal-lang');
   if (saved) setLang(saved);
 
-  /* ── NAV ──────────────────────────────────────────────── */
+  /* ── NAV ───────────────────────────────────── */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
   navbar.classList.add('scrolled');
 
-  /* ── HAMBURGER ────────────────────────────────────────── */
+  /* ── HAMBURGER ─────────────────────────────── */
   const hamburger = document.getElementById('hamburger');
   const mobMenu = document.getElementById('mobMenu');
   hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('open');
+    const open = hamburger.classList.toggle('open');
     mobMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-    if (isOpen) { const f = mobMenu.querySelector('a'); if (f) f.focus(); }
+    hamburger.setAttribute('aria-expanded', open);
   });
   document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    mobMenu.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.focus();
+    hamburger.classList.remove('open'); mobMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
   }));
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobMenu.classList.contains('open')) {
       hamburger.classList.remove('open'); mobMenu.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false'); hamburger.focus();
+      hamburger.setAttribute('aria-expanded','false');
     }
   });
 
-  /* ── REVEAL ───────────────────────────────────────────── */
+  /* ── REVEAL ─────────────────────────────────── */
   const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.08 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
