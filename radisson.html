@@ -296,6 +296,36 @@
     body.lang-ar .amen-num { letter-spacing: 0; }
     .amen-name { font-size: 16px; font-weight: 300; color: var(--dark); }
 
+    /* ── BROCHURE ────────────────────────────────── */
+    .brochure-section { padding: clamp(80px, 12vh, 120px) 0; background: var(--cream2); }
+    .brochure-inner { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(48px, 6vw, 100px); align-items: center; }
+    .brochure-heading { font-size: clamp(28px, 3.5vw, 48px); font-weight: 200; color: var(--dark); line-height: 1.18; margin-top: 10px; margin-bottom: 20px; }
+    .brochure-desc { font-size: 16px; line-height: 1.85; color: var(--mid); margin-bottom: 36px; max-width: 440px; }
+    .brochure-btn {
+      display: inline-block;
+      font-family: '29LT Azer', sans-serif;
+      font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+      padding: 15px 44px;
+      background: var(--dark); color: var(--cream);
+      text-decoration: none; transition: all .3s;
+    }
+    body.lang-ar .brochure-btn { letter-spacing: 0; font-size: 13px; }
+    .brochure-btn:hover { background: var(--brown); }
+    .brochure-right { display: flex; flex-direction: column; gap: 2px; }
+    .brochure-stat {
+      padding: clamp(28px, 3vw, 44px) clamp(24px, 3vw, 40px);
+      background: var(--cream);
+    }
+    .b-num { font-size: clamp(48px, 6vw, 72px); font-weight: 100; color: var(--dark); line-height: 1; }
+    .b-unit { font-size: .45em; color: var(--tan); font-weight: 400; }
+    .b-label { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--tan); margin-top: 8px; }
+    body.lang-ar .b-label { letter-spacing: 0; font-size: 13px; }
+    @media (max-width: 768px) {
+      .brochure-inner { grid-template-columns: 1fr; }
+      .brochure-right { flex-direction: row; }
+      .brochure-stat { flex: 1; }
+    }
+
     /* ── CTA SECTION ─────────────────────────────── */
     .cta-section { padding: clamp(80px, 14vh, 140px) 0; text-align: center; }
     .cta-section h2 {
@@ -375,8 +405,8 @@
     @media (max-width: 540px) {
       .location-grid { grid-template-columns: 1fr 1fr; }
       .foot-grid { grid-template-columns: 1fr; gap: 28px; }
-      .stats-row { flex-wrap: wrap; gap: 24px; }
-      .stat { border: none; padding: 0; }
+      .stats-row { flex-wrap: wrap; gap: 0; }
+      .stat { border: none; padding: 16px 0; width: 50%; flex: none; border-bottom: 1px solid rgba(34,31,26,.08); }
     }
   </style>
 </head>
@@ -477,6 +507,10 @@
           <div class="stat">
             <div class="stat-num">9</div>
             <div class="stat-label"><span class="t-en">Residential Floors</span><span class="t-ar">أدوار سكنية</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10<span style="font-size:.45em;color:var(--tan)">%</span></div>
+            <div class="stat-label"><span class="t-en">Annual ROI</span><span class="t-ar">عائد سنوي</span></div>
           </div>
         </div>
       </div>
@@ -643,6 +677,42 @@
 <div class="full-img tall">
   <img src="radisson-images/courtyard-2.jpg" alt="Interior courtyard" loading="lazy" />
 </div>
+
+<!-- ══════════════ BROCHURE ══════════════ -->
+<section class="brochure-section">
+  <div class="container">
+    <div class="brochure-inner reveal">
+      <div class="brochure-left">
+        <span class="label">
+          <span class="t-en">Project Brochure</span>
+          <span class="t-ar">بروشور المشروع</span>
+        </span>
+        <h2 class="brochure-heading">
+          <span class="t-en-block">All the details,<br>in one document.</span>
+          <span class="t-ar-block">كل التفاصيل،<br>في وثيقة واحدة.</span>
+        </h2>
+        <p class="brochure-desc">
+          <span class="t-en">Floor plans, unit specifications, project timeline, and ownership terms — download the full brochure.</span>
+          <span class="t-ar">المخططات، مواصفات الوحدات، الجدول الزمني للمشروع، وشروط التملك — حمّل البروشور الكامل.</span>
+        </p>
+        <a href="/#contact" class="brochure-btn">
+          <span class="t-en">Request Brochure</span>
+          <span class="t-ar">اطلب البروشور</span>
+        </a>
+      </div>
+      <div class="brochure-right">
+        <div class="brochure-stat">
+          <div class="b-num">10<span class="b-unit">%</span></div>
+          <div class="b-label"><span class="t-en">Expected Annual ROI</span><span class="t-ar">عائد سنوي متوقع</span></div>
+        </div>
+        <div class="brochure-stat">
+          <div class="b-num">14<span class="b-unit"> <span class="t-en">nights</span><span class="t-ar">ليلة</span></span></div>
+          <div class="b-label"><span class="t-en">Free per year for owners</span><span class="t-ar">مجانية سنوياً للمالك</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════ CTA ══════════════ -->
 <section class="cta-section reveal">
